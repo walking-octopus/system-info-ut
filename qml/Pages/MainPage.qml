@@ -25,7 +25,6 @@ Page {
     header: PageHeader {
         id: header
         title: i18n.tr('System Info')
-        // title: `${root.width / 8}x${root.height / 8} gu`
     }
 
     ScrollView {
@@ -57,7 +56,11 @@ Page {
                     iconName: "ubuntu-logo-symbolic"
                     colorIndex: 3
 
-                    onClicked: pStack.push(Qt.resolvedUrl("./Categories/System.qml"))
+                    // TODO: Add a loading animation
+                    onClicked: {
+                        let myData = python.call_sync("system_info.getSystem");
+                        pStack.push(Qt.resolvedUrl("./Categories/System.qml"), { "myData": myData })
+                    }
                 }
 
                 // The specs of your device, like the product codename, screen DPI, fingerprint reader, etc.
@@ -70,8 +73,12 @@ Page {
                 // Your CPU, GPU, RAM, and storage.
                 CategoryButton {
                     title: i18n.tr("Hardware")
-                    // TODO: Replace it with a custom CPU icon from https://thenounproject.com/icon/cpu-156717/
-                    iconName: "media-flash-symbolic"
+
+                    // Thanks to Arthur Shlain for this icon!
+                    // https://thenounproject.com/icon/cpu-156717/
+                    // TODO: When making the about page, don't forget to attribute this icon
+
+                    icon.source: "../../assets/noun-cpu.svg"
                     colorIndex: 9
                 }
 
@@ -85,18 +92,14 @@ Page {
                 // Battery information
                 CategoryButton {
                     title: i18n.tr("Battery")
-                    iconName: "battery-070"
+
+                    // This icon looked blurry when looked up by name, so I've used the its svg
+                    icon.source: "../../assets/battery.svg"
+
                     colorIndex: 6
                 }
 
-                // Repeater {
-                //     model: 2
-                //     CategoryButton {
-                //         title: i18n.tr("Placeholder")
-                //         iconName: "select-none"
-                //         colorIndex: 0
-                //     }
-                // }
+                // TODO: How about a Sensors category?
             }
         }
     }

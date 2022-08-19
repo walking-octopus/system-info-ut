@@ -39,15 +39,16 @@ AbstractButton {
     property string iconName: "select-none"
     property string title: "Placeholder"
 
+    property alias icon: icon
+
     UbuntuShape {
         id: shape
-        aspect: UbuntuShape.DropShadow
+        aspect: rootItem.pressed ? UbuntuShape.Inset : UbuntuShape.DropShadow
         color: rootItem.color
         radius: "medium"
-        
+
         anchors.fill: parent
         clip: true
-
 
         Label {
             anchors {
@@ -68,6 +69,7 @@ AbstractButton {
         }
 
         Icon {
+            id: icon
             name: rootItem.iconName
             color: rootItem.foregroundColor
 
