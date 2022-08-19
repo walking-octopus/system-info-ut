@@ -1,0 +1,15 @@
+{
+    "name": "system-info.walking-octopus",
+    "description": "A beautiful way to view the specifications of your UT device.",
+    "architecture": "@CLICK_ARCH@",
+    "title": "System Info",
+    "hooks": {
+        "system-info": {
+            "apparmor": "system-info.apparmor",
+            "desktop":  "system-info.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "walking-octopus <github.dphn6@aleeas.com>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}

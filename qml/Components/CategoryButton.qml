@@ -1,0 +1,78 @@
+/*
+ * Copyright (C) 2022  walking-octopus
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 3.
+ *
+ * system-info is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import QtQuick 2.7
+import Ubuntu.Components 1.3
+import QtQuick.Layouts 1.3
+
+AbstractButton {
+    id: rootItem
+
+    height: units.gu(22)
+    width: Math.max(
+        // TODO: This wouldn't support more then 2 columns, which doesn't look good on tablets. Maybe Math.clamp would be useful?
+        // TODO: This might look better if it becomes parent.width when there's not enough space
+        (flow.width * 0.5) - (flow.spacing * 0.5),
+        units.gu(15)
+    )
+
+    // RGB channels from 'shape.color' are in [0; 1] range.
+    property color foregroundColor: ((shape.color.r * 0.30 + shape.color.g * 0.6 + shape.color.b * 0.12) > 0.6) ? UbuntuColors.darkGrey : "#F3F3E7"
+
+    // FIXME: Remove this mess
+    readonly property color color: ["#f0f0f0", "#ed3146", "#d4326b", "#e95420", "#f89b0f", "#f5d412", "#46c54f", "#14cfa8", "#19b6ee", "#4e46c5", "#9542c4", "#c343bf"][colorIndex]
+    
+    property int colorIndex: 0;
+    property string iconName: "select-none"
+    property string title: "Placeholder"
+
+    UbuntuShape {
+        id: shape
+        aspect: UbuntuShape.DropShadow
+        color: rootItem.color
+        radius: "medium"
+        
+        anchors.fill: parent
+        clip: true
+
+
+        Label {
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+                bottomMargin: units.gu(1.55)
+                leftMargin: units.gu(1.55)
+            }
+
+            text: rootItem.title
+            fontSize: "large"
+            font.weight: Font.Bold
+            maximumLineCount: 1
+            wrapMode: Text.WordWrap
+
+            color: rootItem.foregroundColor
+        }
+
+        Icon {
+            name: rootItem.iconName
+            color: rootItem.foregroundColor
+
+            width: units.gu(5); height: width
+            anchors.centerIn: parent
+        }
+    }
+}

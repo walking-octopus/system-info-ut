@@ -1,0 +1,18 @@
+import QtQuick 2.7
+import Ubuntu.Components 1.3
+
+ListItem {
+    property alias title: layout.title
+    property alias value: layout.subtitle
+
+    // TODO: Show a toast when copying data
+    onClicked: Clipboard.push(`${layout.title.text}: ${layout.subtitle.text}`)
+
+    ListItemLayout {
+        id: layout
+        anchors.centerIn: parent
+
+        title.text: "Placeholder"
+        subtitle.text: "__"
+    }
+}

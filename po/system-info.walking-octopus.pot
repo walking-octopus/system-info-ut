@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the system-info.walking-octopus package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: system-info.walking-octopus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-19 15:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/Components/InfoItem.qml:14
+msgid "Ubuntu version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:27 ../qml/Pages/MainPage.qml:56
+msgid "System"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:65
+msgid "OS"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:69
+msgid "Ubuntu Version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:73
+msgid "OTA Version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:77
+msgid "Uptime"
+msgstr ""
+
+#: ../qml/Pages/MainPage.qml:27 system-info.desktop.in.h:1
+msgid "System Info"
+msgstr ""
+
+#: ../qml/Pages/MainPage.qml:65
+msgid "Device"
+msgstr ""
+
+#: ../qml/Pages/MainPage.qml:72
+msgid "Hardware"
+msgstr ""
+
+#: ../qml/Pages/MainPage.qml:79
+msgid "Network"
+msgstr ""
+
+#: ../qml/Pages/MainPage.qml:86
+msgid "Battery"
+msgstr ""
