@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-20 16:29+0000\n"
+"POT-Creation-Date: 2022-08-20 18:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,8 +53,8 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:27 system-info.desktop.in.h:1
-msgid "System Info"
+#: ../qml/Pages/MainPage.qml:27
+msgid "Ubuntu Info"
 msgstr ""
 
 #: ../qml/Pages/MainPage.qml:64
@@ -71,4 +71,8 @@ msgstr ""
 
 #: ../qml/Pages/MainPage.qml:90
 msgid "Battery"
+msgstr ""
+
+#: system-info.desktop.in.h:1
+msgid "System Info"
 msgstr ""

@@ -24,7 +24,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: python.isLoading ? i18n.tr("Loading...") : i18n.tr('System Info')
+        title: python.isLoading ? i18n.tr("Loading...") : i18n.tr('Ubuntu Info')
     }
 
     ScrollView {
