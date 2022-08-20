@@ -31,14 +31,11 @@ MainView {
     width: units.gu(80)
     height: units.gu(70)
 
-    PageStack {
-        id: pStack
-
-        Component.onCompleted:
-            pStack.push(Qt.resolvedUrl("./Pages/MainPage.qml"))
-    }
-
+    PageStack { id: pStack }
+    
     Backend {
         id: python
+
+        onReady: pStack.push(Qt.resolvedUrl("./Pages/MainPage.qml"))
     }
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-19 20:16+0000\n"
+"POT-Creation-Date: 2022-08-20 16:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,58 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:55
+#: ../qml/Pages/Categories/System.qml:30 ../qml/Pages/MainPage.qml:55
 msgid "System"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:68
+#: ../qml/Pages/Categories/System.qml:67
 msgid "OS"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:72
+#: ../qml/Pages/Categories/System.qml:71
 msgid "OTA Version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:76
+#: ../qml/Pages/Categories/System.qml:75
 msgid "Ubuntu Version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:80
+#: ../qml/Pages/Categories/System.qml:79
 msgid "Kernel Version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:84
+#: ../qml/Pages/Categories/System.qml:83
+msgid "Android subsystem version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:94
+msgid "Hostname"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:98
 msgid "Uptime"
+msgstr ""
+
+#: ../qml/Pages/MainPage.qml:27
+msgid "Loading..."
 msgstr ""
 
 #: ../qml/Pages/MainPage.qml:27 system-info.desktop.in.h:1
 msgid "System Info"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:68
+#: ../qml/Pages/MainPage.qml:64
 msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:75
+#: ../qml/Pages/MainPage.qml:71
 msgid "Hardware"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:87
+#: ../qml/Pages/MainPage.qml:83
 msgid "Network"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:94
+#: ../qml/Pages/MainPage.qml:90
 msgid "Battery"
 msgstr ""

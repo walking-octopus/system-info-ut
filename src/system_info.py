@@ -16,31 +16,67 @@
 
 import platform
 import subprocess
+# import psutil
+
+def get_props():
+  props = {}
+
+  try:
+    with open('/system/build.prop', mode='r', newline='\n') as input_file:
+      for row in input_file.read().splitlines():
+        row = row.strip().split('=')
+        if len(row) != 2: continue
+        props[row[0]] = row[1]
+  except getattr(__builtins__, 'FileNotFoundError', IOError):
+    return {}
+
+  return props
+
+# TODO: Add a placeholder for non-existant values
+def system_image():
+  fields = {}
+  output = cmd("/usr/bin/system-image-cli -i").strip().splitlines()
+  for row in output:
+    row = row.split(": ")
+    if len(row) != 2: continue
+    fields[row[0].replace(" ", "_")] = row[1]
+  return fields
 
 def cmd(command):
-  result = subprocess.getstatusoutput(command)
-  if result[0] != 0 or "not found" in result[1]:
+  try:
+    result = subprocess.run(command.split(" "), stdout=subprocess.PIPE)
+  except FileNotFoundError:
+    return "N/A"
+
+  if result.returncode != 0:
     return "N/A"
   else:
-    return result[1]
+    return result.stdout.decode("utf-8")
+
+def unwrap_or(value, fallback="N/A"):
+  if value is not None:
+    return value
+  else:
+    return fallback
 
 def getSystem():
   uname = platform.uname()
   kernel = uname.release
   hostname = uname.node
-  arch = uname.processor
-
+  # arch = uname.processor
   disro = " ".join(platform.linux_distribution())
-  ota = cmd("/usr/bin/system-image-cli -i | awk '/version tag:/ { print $3 }'")
-  android_version = cmd('/usr/bin/getprop ro.build.version.release')
-  device_codename = cmd('/usr/bin/getprop ro.product.board')
+
+  ota_version = system_image().get('version_tag')
+
+  android_version = get_props().get('ro.build.version.release')
+  # device_codename = get_props().get('ro.product.board')
 
   return {
     "distro": disro,
-    "ota": ota,
+    "ota": ota_version,
     "kernel": kernel,
     "hostname": hostname,
-    "arch": arch,
+    # "arch": arch,
     "android_version": android_version,
-    "device_codename": device_codename
+    # "device_codename": device_codename
   }

@@ -24,7 +24,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: i18n.tr('System Info')
+        title: python.isLoading ? i18n.tr("Loading...") : i18n.tr('System Info')
     }
 
     ScrollView {
@@ -56,18 +56,14 @@ Page {
                     iconName: "ubuntu-logo-symbolic"
                     colorIndex: 3
 
-                    // TODO: Add a loading animation
-                    onClicked: {
-                        let myData = python.call_sync("system_info.getSystem");
-                        pStack.push(Qt.resolvedUrl("./Categories/System.qml"), { "myData": myData })
-                    }
+                    onClicked: python.loadCategory("../Pages/Categories/System.qml", "system_info.getSystem")
                 }
 
                 // The specs of your device, like the product codename, screen DPI, fingerprint reader, etc.
                 CategoryButton {
                     title: i18n.tr("Device")
                     iconName: "phone-smartphone-symbolic"
-                    colorIndex: 4
+                    colorIndex: 5
                 }
 
                 // Your CPU, GPU, RAM, and storage.

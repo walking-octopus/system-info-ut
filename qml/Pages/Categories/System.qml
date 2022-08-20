@@ -23,8 +23,7 @@ Page {
     anchors.fill: parent
 
     property var myData
-
-    Component.onCompleted: print(JSON.stringify(myData, null, 2))
+    // Component.onCompleted: print(JSON.stringify(myData, null, 2))
 
     header: PageHeader {
         id: header
@@ -33,9 +32,9 @@ Page {
 
     // OTA version and channel
     // Ubuntu base version
-    // Halium and Android subsystem version
-    // WayDroid/Anbox version
     // Kernel version
+    // WayDroid/Anbox version
+    // Halium and Android subsystem version
     // Uptime
     // Developer mode/SSH enabled
     // Localization settings
@@ -69,20 +68,35 @@ Page {
                 }
 
                 InfoItem {
-                    title.text: i18n.tr("OTA Version")
-                    value.text: myData["ota"]
+                    title: i18n.tr("OTA Version")
+                    value: myData["ota"]
                 }
                 InfoItem {
-                    title.text: i18n.tr("Ubuntu Version")
-                    value.text: myData["distro"]
+                    title: i18n.tr("Ubuntu Version")
+                    value: myData["distro"]
                 }
                 InfoItem {
-                    title.text: i18n.tr("Kernel Version")
-                    value.text: myData["kernel"]
+                    title: i18n.tr("Kernel Version")
+                    value: myData["kernel"]
                 }
                 InfoItem {
-                    title.text: i18n.tr("Uptime")
-                    value.text: "TODO"
+                    title: i18n.tr("Android subsystem version")
+                    value: myData["android_version"]
+                }
+                
+                // This would fit Device or Hardware more
+                // InfoItem {
+                //     title: i18n.tr("Device arch")
+                //     value: myData["arch"]
+                // }
+                    
+                InfoItem {
+                    title: i18n.tr("Hostname")
+                    value: myData["hostname"]
+                }
+                InfoItem {
+                    title: i18n.tr("Uptime")
+                    value: "TODO"
                 }
             }
         }
