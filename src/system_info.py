@@ -20,7 +20,6 @@ import subprocess
 
 def get_props():
   props = {}
-
   try:
     with open('/system/build.prop', mode='r', newline='\n') as input_file:
       for row in input_file.read().splitlines():
@@ -29,7 +28,6 @@ def get_props():
         props[row[0]] = row[1]
   except getattr(__builtins__, 'FileNotFoundError', IOError):
     return {}
-
   return props
 
 # TODO: Add a placeholder for non-existant values
@@ -72,11 +70,11 @@ def getSystem():
   # device_codename = get_props().get('ro.product.board')
 
   return {
-    "distro": disro,
-    "ota": ota_version,
     "kernel": kernel,
     "hostname": hostname,
     # "arch": arch,
+    "distro": disro,
+    "ota_version": ota_version,
     "android_version": android_version,
     # "device_codename": device_codename
   }

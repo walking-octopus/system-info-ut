@@ -69,7 +69,7 @@ Page {
 
                 InfoItem {
                     title: i18n.tr("OTA Version")
-                    value: myData["ota"]
+                    value: myData["ota_version"]
                 }
                 InfoItem {
                     title: i18n.tr("Ubuntu Version")
