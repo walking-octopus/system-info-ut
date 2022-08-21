@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-20 18:48+0000\n"
+"POT-Creation-Date: 2022-08-21 19:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,62 +17,102 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Pages/Categories/System.qml:30 ../qml/Pages/MainPage.qml:55
+#: ../qml/Pages/Categories/System.qml:30 ../qml/Pages/MainPage.qml:56
 msgid "System"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:67
+#: ../qml/Pages/Categories/System.qml:68
 msgid "OS"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:71
-msgid "OTA Version"
+#: ../qml/Pages/Categories/System.qml:72
+msgid "OTA version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:75
-msgid "Ubuntu Version"
+#: ../qml/Pages/Categories/System.qml:76
+msgid "Update channel"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:79
-msgid "Kernel Version"
+#: ../qml/Pages/Categories/System.qml:80
+msgid "Last update"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:83
-msgid "Android subsystem version"
+#: ../qml/Pages/Categories/System.qml:84
+msgid "Ubuntu version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:94
+#: ../qml/Pages/Categories/System.qml:88
+msgid "Kernel version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:99
 msgid "Hostname"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:98
+#: ../qml/Pages/Categories/System.qml:103
 msgid "Uptime"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:27
-msgid "Loading..."
+#: ../qml/Pages/Categories/System.qml:124
+msgid "Halium"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:125
+msgid "Halium allows us run Linux on the devices with pre-installed Android."
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:129
+msgid "Android subsystem version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:133
+msgid "Android API level"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:137
+msgid "Security patch"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:141
+msgid "Build fingerprint"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:145
+msgid "Build date"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:149
+msgid "Build ID"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:153
+msgid "Build tags"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:157
+msgid "Build type"
 msgstr ""
 
 #: ../qml/Pages/MainPage.qml:27
-msgid "Ubuntu Info"
+msgid "Collecting data..."
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:64
+#: ../qml/Pages/MainPage.qml:65
 msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:71
+#: ../qml/Pages/MainPage.qml:72
 msgid "Hardware"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:83
+#: ../qml/Pages/MainPage.qml:84
 msgid "Network"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:90
+#: ../qml/Pages/MainPage.qml:91
 msgid "Battery"
 msgstr ""
 
 #: system-info.desktop.in.h:1
-msgid "System Info"
+msgid "Ubuntu Info"
 msgstr ""

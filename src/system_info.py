@@ -16,7 +16,7 @@
 
 import platform
 import subprocess
-# import psutil
+import psutil
 
 def get_props():
   props = {}
@@ -64,17 +64,46 @@ def getSystem():
   # arch = uname.processor
   disro = " ".join(platform.linux_distribution())
 
-  ota_version = system_image().get('version_tag')
+  boot_time = psutil.boot_time()
 
-  android_version = get_props().get('ro.build.version.release')
-  # device_codename = get_props().get('ro.product.board')
+  system_image_data = system_image()
+  ota_version = system_image_data.get('version_tag')
+  ota_channel = system_image_data.get('channel')
+  last_ota_update = system_image_data.get('last_update')
+
+  build_props = get_props()
+  android_version = build_props.get('ro.build.version.release')
+  android_api_level = build_props.get('ro.build.version.sdk')
+  security_patch = build_props.get('ro.build.version.security_patch')
+  build_id = build_props.get('ro.build.id')
+  build_date = build_props.get('ro.build.date')
+  build_fingerprint = build_props.get('ro.build.fingerprint')
+  build_tags = build_props.get('ro.build.tags')
+  build_type = build_props.get('ro.build.type')
+  # device_codename = build_props.get('ro.product.board')
 
   return {
-    "kernel": kernel,
-    "hostname": hostname,
-    # "arch": arch,
-    "distro": disro,
-    "ota_version": ota_version,
-    "android_version": android_version,
-    # "device_codename": device_codename
+    "uname": {
+      "kernel": kernel,
+      "hostname": hostname,
+      # "arch": arch,
+      "distro": disro,
+    },
+    "system-image": {
+      "ota_version": ota_version,
+      "update_channel": ota_channel,
+      "last_update": last_ota_update,
+    },
+    "build-info": {
+      "android_version": android_version,
+      "android_api_level": android_api_level,
+      "security_patch": security_patch,
+      "build_fingerprint": build_fingerprint,
+      "build_date": build_date,
+      "build_id": build_id,
+      "build_tags": build_tags,
+      "build_type": build_type,
+    },
+    # "device_codename": device_codename,
+    "boot_time": boot_time
   }

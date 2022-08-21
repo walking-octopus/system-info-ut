@@ -9,11 +9,11 @@ Python {
 
     function loadCategory(categoryPage, pythonFunction) {
         python.isLoading = true; 
-        // Maybe add a timer not to show the loading bar when the delay is less then half a second.
+        // Maybe add a Timer to hide the loading bar when the delay is less then half a second?
 
-        python.call(pythonFunction, [], function(myData) {
+        python.call(pythonFunction, [], function(systemInfo) {
             python.isLoading = false;
-            pStack.push(Qt.resolvedUrl(categoryPage), { "myData": myData });
+            pStack.push(Qt.resolvedUrl(categoryPage), { "systemInfo": systemInfo });
         });
     }
 

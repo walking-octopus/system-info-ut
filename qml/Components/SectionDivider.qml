@@ -12,13 +12,15 @@ Item {
         right: parent.right
         leftMargin: units.gu(2)
     }
-    height: units.gu(6)
+    height: sectionSublabel.text ? units.gu(8) : units.gu(6) // FIXME: sectionSublabel is a bit hacky.
+    clip: true
 
     Label {
         id: sectionLabel
         anchors {
             top: sectionSublabel.text ? parent.top : undefined
-            topMargin: sectionSublabel.text ? units.gu(2) : units.gu(1)
+            topMargin: sectionSublabel.text ? units.gu(1.5) : units.gu(1)
+            bottomMargin: sectionSublabel.text ? units.gu(2) : 0
             left: parent.left
             verticalCenter: sectionSublabel.text ? undefined : parent.verticalCenter
         }
@@ -30,14 +32,17 @@ Item {
     Label {
         id: sectionSublabel
         visible: !!text
-        width: parent.width
+        width: parent.width - anchors.rightMargin
 
         anchors {
             top: sectionLabel.bottom
-            topMargin: units.gu(1)
+            topMargin: units.gu(0.5)
+            rightMargin: units.gu(1.5)
         }
 
-        textSize: Label.XSmall
+        // textSize: Label.Small
+        fontSizeMode: Text.Fit
+
         wrapMode: Label.WordWrap
         color: theme.palette.normal.backgroundTertiaryText
     }
