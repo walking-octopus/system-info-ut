@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 16:18+0000\n"
+"POT-Creation-Date: 2022-08-22 19:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,52 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Pages/Categories/System.qml:30 ../qml/Pages/MainPage.qml:56
-msgid "System"
+#: ../qml/Pages/Categories/Device.qml:30 ../qml/Pages/MainPage.qml:68
+msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:68
+#: ../qml/Pages/Categories/Device.qml:60 ../qml/Pages/Categories/System.qml:61
 msgid "OS"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:72
+#: ../qml/Pages/Categories/Device.qml:64 ../qml/Pages/Categories/System.qml:65
 msgid "OTA version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:76
+#: ../qml/Pages/Categories/Device.qml:68 ../qml/Pages/Categories/System.qml:69
 msgid "Update channel"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:80
+#: ../qml/Pages/Categories/System.qml:30 ../qml/Pages/MainPage.qml:58
+msgid "System"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:73
 msgid "Last update"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:84
+#: ../qml/Pages/Categories/System.qml:77
 msgid "Ubuntu version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:88
+#: ../qml/Pages/Categories/System.qml:81
 msgid "Kernel version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:93
+#: ../qml/Pages/Categories/System.qml:89
 msgid "Device arch"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:93
+msgid "Root file-system status"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:94
+msgid "Locked"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:94
+msgid "Unlocked"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:97
@@ -58,78 +74,90 @@ msgid "Uptime"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:122
-msgid "Language"
-msgstr ""
-
-#: ../qml/Pages/Categories/System.qml:126
 msgid "AppArmor status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:127
+#: ../qml/Pages/Categories/System.qml:123
+#: ../qml/Pages/Categories/System.qml:132
+#: ../qml/Pages/Categories/System.qml:136
 msgid "Disabled"
 msgstr ""
 
+#: ../qml/Pages/Categories/System.qml:123
+#: ../qml/Pages/Categories/System.qml:132
+#: ../qml/Pages/Categories/System.qml:136
+msgid "Enabled"
+msgstr ""
+
 #: ../qml/Pages/Categories/System.qml:127
-msgid "Loaded"
+msgid "Preferences"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:131
-msgid "Halium"
+msgid "SSH status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:132
-msgid "Halium allows us run Linux on the devices with pre-installed Android."
+#: ../qml/Pages/Categories/System.qml:135
+msgid "Developer mode/ADB status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:136
-msgid "Android subsystem version"
-msgstr ""
-
-#: ../qml/Pages/Categories/System.qml:140
-msgid "Android API level"
+#: ../qml/Pages/Categories/System.qml:139
+msgid "Language"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:144
+msgid "Halium"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:145
+msgid "Halium allows us run Linux on the devices with pre-installed Android."
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:149
+msgid "Android subsystem version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:153
+msgid "Android API level"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:157
 msgid "Security patch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:148
+#: ../qml/Pages/Categories/System.qml:161
 msgid "Build fingerprint"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:152
+#: ../qml/Pages/Categories/System.qml:165
 msgid "Build date"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:156
+#: ../qml/Pages/Categories/System.qml:169
 msgid "Build ID"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:160
+#: ../qml/Pages/Categories/System.qml:173
 msgid "Build tags"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:164
+#: ../qml/Pages/Categories/System.qml:177
 msgid "Build type"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:27
+#: ../qml/Pages/MainPage.qml:29
 msgid "Collecting data..."
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:65
-msgid "Device"
-msgstr ""
-
-#: ../qml/Pages/MainPage.qml:72
+#: ../qml/Pages/MainPage.qml:78
 msgid "Hardware"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:84
+#: ../qml/Pages/MainPage.qml:90
 msgid "Network"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:91
+#: ../qml/Pages/MainPage.qml:97
 msgid "Battery"
 msgstr ""
 

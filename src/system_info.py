@@ -84,6 +84,10 @@ def getSystem():
 
   lang = os.getenv('LANGUAGE')
   aa_loaded = "Yes" in cmd("aa-enabled")
+  fs_writable = os.access('/', os.W_OK)
+
+  ssh_enabled = "enabled" in cmd("android-gadget-service status ssh")
+  adb_enabled = "enabled" in cmd("android-gadget-service status adb")
 
   # TODO: Fetching boot slot info might be useful
 
@@ -111,6 +115,12 @@ def getSystem():
     },
     # "device_codename": device_codename,
     "boot_time": boot_time,
+    "aa_loaded": aa_loaded,
+    "fs_writable": fs_writable,
+    "ssh_enabled": ssh_enabled,
+    "adb_enabled": adb_enabled,
     "lang": lang,
-    "aa_loaded": aa_loaded
   }
+
+def getDevice():
+  return {}

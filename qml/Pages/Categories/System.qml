@@ -30,14 +30,7 @@ Page {
         title: i18n.tr('System')
     }
 
-    // OTA version and channel
-    // Ubuntu base version
-    // Kernel version
-    // WayDroid/Anbox version
-    // Halium and Android subsystem version
-    // Uptime
-    // Developer mode/SSH enabled
-    // Localization settings
+    // TODO: Add WayDroid/Anbox version
 
     ScrollView {
         id: scrollView
@@ -89,9 +82,16 @@ Page {
                     value: systemInfo["uname"]["kernel"]
                 }
                 InfoItem {
-                    // This would fit better in Device or Hardware
+                    // This would fit better in Device or Hardware,
+                    // but since it determines if a binary is compatible
+                    // with your system, but might as well be here.
+
                     title: i18n.tr("Device arch")
                     value: systemInfo["uname"]["arch"]
+                }
+                InfoItem {
+                    title: i18n.tr("Root file-system status")
+                    value: systemInfo["fs_writable"] ? i18n.tr("Unlocked") : i18n.tr("Locked")
                 }
                 InfoItem {
                     title: i18n.tr("Hostname")
@@ -107,8 +107,8 @@ Page {
                             // let seconds = Math.floor((end - start) / 1000) % 60;
 
                             let time = [days, hours, minutes]
-                                .map((v, i) => v > 0 ? v + ['d', 'h', 'm', 's'][i] : '')
                                 .filter(i => !!i)
+                                .map((v, i) => v > 0 ? v + ['d', 'h', 'm', 's'][i] : '')
                                 .join(' ');
 
                             return time
@@ -119,14 +119,27 @@ Page {
                     }
                 }
                 InfoItem {
-                    title: i18n.tr("Language")
-                    value: systemInfo["lang"]
-                }
-                InfoItem {
                     title: i18n.tr("AppArmor status")
                     value: systemInfo["aa_loaded"] ? i18n.tr("Enabled") : i18n.tr("Disabled")
                 }
 
+                SectionDivider {
+                    text: i18n.tr("Preferences")
+                }
+
+                InfoItem {
+                    title: i18n.tr("SSH status")
+                    value: systemInfo["ssh_enabled"] ? i18n.tr("Enabled") : i18n.tr("Disabled")
+                }
+                InfoItem {
+                    title: i18n.tr("Developer mode/ADB status")
+                    value: systemInfo["adb_enabled"] ? i18n.tr("Enabled") : i18n.tr("Disabled")
+                }
+                InfoItem {
+                    title: i18n.tr("Language")
+                    value: systemInfo["lang"]
+                }
+                
                 SectionDivider {
                     text: i18n.tr("Halium")
                     subtext: i18n.tr("Halium allows us run Linux on the devices with pre-installed Android.")
