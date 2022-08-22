@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-21 19:01+0000\n"
+"POT-Creation-Date: 2022-08-22 16:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,51 +45,71 @@ msgstr ""
 msgid "Kernel version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:99
+#: ../qml/Pages/Categories/System.qml:93
+msgid "Device arch"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:97
 msgid "Hostname"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:103
+#: ../qml/Pages/Categories/System.qml:101
 msgid "Uptime"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:124
+#: ../qml/Pages/Categories/System.qml:122
+msgid "Language"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:126
+msgid "AppArmor status"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:127
+msgid "Disabled"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:127
+msgid "Loaded"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:131
 msgid "Halium"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:125
+#: ../qml/Pages/Categories/System.qml:132
 msgid "Halium allows us run Linux on the devices with pre-installed Android."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:129
+#: ../qml/Pages/Categories/System.qml:136
 msgid "Android subsystem version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:133
+#: ../qml/Pages/Categories/System.qml:140
 msgid "Android API level"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:137
+#: ../qml/Pages/Categories/System.qml:144
 msgid "Security patch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:141
+#: ../qml/Pages/Categories/System.qml:148
 msgid "Build fingerprint"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:145
+#: ../qml/Pages/Categories/System.qml:152
 msgid "Build date"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:149
+#: ../qml/Pages/Categories/System.qml:156
 msgid "Build ID"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:153
+#: ../qml/Pages/Categories/System.qml:160
 msgid "Build tags"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:157
+#: ../qml/Pages/Categories/System.qml:164
 msgid "Build type"
 msgstr ""
 

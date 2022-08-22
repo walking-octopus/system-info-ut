@@ -17,6 +17,7 @@
 import platform
 import subprocess
 import psutil
+import os
 
 def get_props():
   props = {}
@@ -45,7 +46,6 @@ def cmd(command):
     result = subprocess.run(command.split(" "), stdout=subprocess.PIPE)
   except FileNotFoundError:
     return "N/A"
-
   if result.returncode != 0:
     return "N/A"
   else:
@@ -61,7 +61,7 @@ def getSystem():
   uname = platform.uname()
   kernel = uname.release
   hostname = uname.node
-  # arch = uname.processor
+  arch = uname.processor
   disro = " ".join(platform.linux_distribution())
 
   boot_time = psutil.boot_time()
@@ -82,11 +82,16 @@ def getSystem():
   build_type = build_props.get('ro.build.type')
   # device_codename = build_props.get('ro.product.board')
 
+  lang = os.getenv('LANGUAGE')
+  aa_loaded = "Yes" in cmd("aa-enabled")
+
+  # TODO: Fetching boot slot info might be useful
+
   return {
     "uname": {
       "kernel": kernel,
       "hostname": hostname,
-      # "arch": arch,
+      "arch": arch,
       "distro": disro,
     },
     "system-image": {
@@ -105,5 +110,7 @@ def getSystem():
       "build_type": build_type,
     },
     # "device_codename": device_codename,
-    "boot_time": boot_time
+    "boot_time": boot_time,
+    "lang": lang,
+    "aa_loaded": aa_loaded
   }

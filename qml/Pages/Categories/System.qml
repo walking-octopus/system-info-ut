@@ -53,7 +53,7 @@ Page {
 
         Item {
             width: scrollView.width
-            height: layout.height + units.gu(4)
+            height: layout.height + units.gu(5)
 
             Column {
                 id: layout
@@ -88,13 +88,11 @@ Page {
                     title: i18n.tr("Kernel version")
                     value: systemInfo["uname"]["kernel"]
                 }
-
-                // This would fit better in Device or Hardware
-                // InfoItem {
-                //     title: i18n.tr("Device arch")
-                //     value: systemInfo["uname"]["arch"]
-                // }
-
+                InfoItem {
+                    // This would fit better in Device or Hardware
+                    title: i18n.tr("Device arch")
+                    value: systemInfo["uname"]["arch"]
+                }
                 InfoItem {
                     title: i18n.tr("Hostname")
                     value: systemInfo["uname"]["hostname"]
@@ -109,8 +107,8 @@ Page {
                             // let seconds = Math.floor((end - start) / 1000) % 60;
 
                             let time = [days, hours, minutes]
-                                // FIXME: Weird spaces appear when uptime's less than a day
                                 .map((v, i) => v > 0 ? v + ['d', 'h', 'm', 's'][i] : '')
+                                .filter(i => !!i)
                                 .join(' ');
 
                             return time
@@ -119,6 +117,14 @@ Page {
                         let boot_time = new Date(systemInfo["boot_time"] * 1000);
                         return getElapsedTime(boot_time, new Date());
                     }
+                }
+                InfoItem {
+                    title: i18n.tr("Language")
+                    value: systemInfo["lang"]
+                }
+                InfoItem {
+                    title: i18n.tr("AppArmor status")
+                    value: systemInfo["aa_loaded"] ? i18n.tr("Enabled") : i18n.tr("Disabled")
                 }
 
                 SectionDivider {
