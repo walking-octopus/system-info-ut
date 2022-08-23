@@ -6,14 +6,17 @@ ListItem {
     property string title: "Placeholder"
     property var value
 
+    // visible: !!rootItem.value
+
     // TODO: Show a toast when copying data
-    onClicked: Clipboard.push(`${layout.title.text}: ${layout.subtitle.text}`)
+    onClicked:
+        Clipboard.push(`${layout.title.text}: ${layout.subtitle.text}`)
 
     ListItemLayout {
         id: layout
         anchors.centerIn: parent
 
         title.text: rootItem.title
-        subtitle.text: rootItem.value != undefined ? rootItem.value : "N/A"
+        subtitle.text: !!rootItem.value ? rootItem.value : "N/A"
     }
 }
