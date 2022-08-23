@@ -22,12 +22,9 @@ AbstractButton {
     id: rootItem
 
     height: units.gu(22)
-    width: Math.max(
-        // TODO: This wouldn't support more then 2 columns, which doesn't look good on tablets. Maybe Math.clamp would be useful?
-        // TODO: This might look better if it becomes parent.width when there's not enough space
-        (flow.width * 0.5) - (flow.spacing * 0.5),
-        units.gu(15)
-    )
+    width: parent.width > units.gu(38) ?
+        (flow.width * 0.5) - (flow.spacing * 0.5)
+        : parent.width
 
     // RGB channels from 'shape.color' are in [0; 1] range.
     property color foregroundColor: ((shape.color.r * 0.30 + shape.color.g * 0.6 + shape.color.b * 0.12) > 0.6) ? UbuntuColors.darkGrey : "#F3F3E7"
