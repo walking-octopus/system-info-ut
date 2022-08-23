@@ -22,9 +22,12 @@ Page {
     id: mainPage
     anchors.fill: parent
 
+    // TODO: Add report export
+
+    title: header.title
     header: PageHeader {
         id: header
-        title: python.isLoading ? i18n.tr("Collecting data...") : 'Ubuntu Info'
+        title: python.isLoading ? i18n.tr("Collecting data...") : i18n.tr('Ubuntu Info')
         // TODO: Add a LoadingBar
     }
 
@@ -57,7 +60,8 @@ Page {
                     iconName: "ubuntu-logo-symbolic"
                     colorIndex: 3
 
-                    onClicked: python.loadCategory("../Pages/Categories/System.qml", "system_info.getSystem")
+                    onClicked:
+                        python.loadCategory("../Pages/Categories/System.qml", "system_info.getSystem")
                 }
 
                 // The specs of your device, like the product codename, screen DPI, fingerprint reader, etc.

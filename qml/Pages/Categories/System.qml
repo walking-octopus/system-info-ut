@@ -25,6 +25,7 @@ Page {
     property var systemInfo
     // Component.onCompleted: print(JSON.stringify(systemInfo, null, 2))
 
+    title: header.title
     header: PageHeader {
         id: header
         title: i18n.tr('System')
@@ -121,6 +122,26 @@ Page {
                 InfoItem {
                     title: i18n.tr("AppArmor status")
                     value: systemInfo["aa_loaded"] ? i18n.tr("Enabled") : i18n.tr("Disabled")
+                }
+                ListItem {                
+                    onClicked:
+                        pStack.push(Qt.resolvedUrl("./LoadedModules.qml"));
+                
+                    ListItemLayout {
+                        anchors.centerIn: parent
+                        
+                        title.text: i18n.tr("View loaded modules")
+                        subtitle.text: i18n.tr("This may help troubleshoot device issues.")
+                    }
+                    
+                    // FIXME: For some reason, it doesn't align verticly
+                    ProgressionSlot {
+                        anchors {
+                            right: parent.right
+                            verticalCenter: parent.verticalCenter
+                            rightMargin: units.gu(2)
+                        }
+                    }
                 }
 
                 SectionDivider {

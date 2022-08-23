@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-22 19:07+0000\n"
+"POT-Creation-Date: 2022-08-23 17:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,150 +17,190 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Pages/Categories/Device.qml:30 ../qml/Pages/MainPage.qml:68
+#: ../qml/Pages/Categories/Device.qml:30 ../qml/Pages/MainPage.qml:69
 msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:60 ../qml/Pages/Categories/System.qml:61
-msgid "OS"
+#: ../qml/Pages/Categories/Device.qml:60
+msgid "Basics"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:64 ../qml/Pages/Categories/System.qml:65
-msgid "OTA version"
+#: ../qml/Pages/Categories/Device.qml:64
+msgid "Model"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:68 ../qml/Pages/Categories/System.qml:69
-msgid "Update channel"
+#: ../qml/Pages/Categories/Device.qml:72
+msgid "Manufacturer"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:30 ../qml/Pages/MainPage.qml:58
+#: ../qml/Pages/Categories/Device.qml:76
+msgid "Codename"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:81
+msgid "Display"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:86
+msgid "Camera"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:91
+msgid "Features"
+msgstr ""
+
+#: ../qml/Pages/Categories/LoadedModules.qml:41
+msgid "Loaded modules"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:59
 msgid "System"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:73
+#: ../qml/Pages/Categories/System.qml:62
+msgid "OS"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:66
+msgid "OTA version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:70
+msgid "Update channel"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:74
 msgid "Last update"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:77
+#: ../qml/Pages/Categories/System.qml:78
 msgid "Ubuntu version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:81
+#: ../qml/Pages/Categories/System.qml:82
 msgid "Kernel version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:89
+#: ../qml/Pages/Categories/System.qml:90
 msgid "Device arch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:93
+#: ../qml/Pages/Categories/System.qml:94
 msgid "Root file-system status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:94
+#: ../qml/Pages/Categories/System.qml:95
 msgid "Locked"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:94
+#: ../qml/Pages/Categories/System.qml:95
 msgid "Unlocked"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:97
+#: ../qml/Pages/Categories/System.qml:98
 msgid "Hostname"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:101
+#: ../qml/Pages/Categories/System.qml:102
 msgid "Uptime"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:122
+#: ../qml/Pages/Categories/System.qml:123
 msgid "AppArmor status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:123
-#: ../qml/Pages/Categories/System.qml:132
-#: ../qml/Pages/Categories/System.qml:136
+#: ../qml/Pages/Categories/System.qml:124
+#: ../qml/Pages/Categories/System.qml:153
+#: ../qml/Pages/Categories/System.qml:157
 msgid "Disabled"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:123
-#: ../qml/Pages/Categories/System.qml:132
-#: ../qml/Pages/Categories/System.qml:136
+#: ../qml/Pages/Categories/System.qml:124
+#: ../qml/Pages/Categories/System.qml:153
+#: ../qml/Pages/Categories/System.qml:157
 msgid "Enabled"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:127
+#: ../qml/Pages/Categories/System.qml:133
+msgid "View loaded modules"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:134
+msgid "This may help troubleshoot device issues."
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:148
 msgid "Preferences"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:131
+#: ../qml/Pages/Categories/System.qml:152
 msgid "SSH status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:135
+#: ../qml/Pages/Categories/System.qml:156
 msgid "Developer mode/ADB status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:139
+#: ../qml/Pages/Categories/System.qml:160
 msgid "Language"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:144
+#: ../qml/Pages/Categories/System.qml:165
 msgid "Halium"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:145
+#: ../qml/Pages/Categories/System.qml:166
 msgid "Halium allows us run Linux on the devices with pre-installed Android."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:149
+#: ../qml/Pages/Categories/System.qml:170
 msgid "Android subsystem version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:153
+#: ../qml/Pages/Categories/System.qml:174
 msgid "Android API level"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:157
+#: ../qml/Pages/Categories/System.qml:178
 msgid "Security patch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:161
+#: ../qml/Pages/Categories/System.qml:182
 msgid "Build fingerprint"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:165
+#: ../qml/Pages/Categories/System.qml:186
 msgid "Build date"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:169
+#: ../qml/Pages/Categories/System.qml:190
 msgid "Build ID"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:173
+#: ../qml/Pages/Categories/System.qml:194
 msgid "Build tags"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:177
+#: ../qml/Pages/Categories/System.qml:198
 msgid "Build type"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:29
+#: ../qml/Pages/MainPage.qml:30
 msgid "Collecting data..."
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:78
+#: ../qml/Pages/MainPage.qml:30 system-info.desktop.in.h:1
+msgid "Ubuntu Info"
+msgstr ""
+
+#: ../qml/Pages/MainPage.qml:79
 msgid "Hardware"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:90
+#: ../qml/Pages/MainPage.qml:91
 msgid "Network"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:97
+#: ../qml/Pages/MainPage.qml:98
 msgid "Battery"
-msgstr ""
-
-#: system-info.desktop.in.h:1
-msgid "Ubuntu Info"
 msgstr ""

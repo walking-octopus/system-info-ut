@@ -122,5 +122,39 @@ def getSystem():
     "lang": lang,
   }
 
+def getLoadedModules():
+  modulesNames = os.listdir("/sys/module/")
+
+  response = []
+  for name in modulesNames:
+    try:
+      version = open("/sys/module/" + name + "/version").read().strip()
+    except FileNotFoundError:
+      version = None;
+
+    response.append({
+      "name": name,
+      "version": version
+    })
+
+  return response
+
 def getDevice():
-  return {}
+  # TODO: Add model fetching for mainline
+  # /sys/devices/virtual/dmi/id/product_name
+  # /sys/devices/virtual/dmi/id/product_family
+  # /sys/devices/virtual/dmi/id/sys_vendor
+
+  build_props = get_props()
+  model, brand = build_props.get("ro.product.model"), build_props.get("ro.product.brand")
+  manufacturer = build_props.get("ro.product.manufacturer")
+  code_name = build_props.get("ro.cm.device")
+
+  return {
+    "basics": {
+      "model": model,
+      "brand": brand,
+      "manufacturer": manufacturer,
+      "code_name": code_name
+    }
+  }
