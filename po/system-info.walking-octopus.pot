@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-23 17:48+0000\n"
+"POT-Creation-Date: 2022-08-24 19:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,70 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Pages/Categories/Device.qml:30 ../qml/Pages/MainPage.qml:69
+#: ../qml/Pages/Categories/Device.qml:32 ../qml/Pages/MainPage.qml:69
 msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:60
+#: ../qml/Pages/Categories/Device.qml:62
 msgid "Basics"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:64
+#: ../qml/Pages/Categories/Device.qml:66
 msgid "Model"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:72
+#: ../qml/Pages/Categories/Device.qml:74 ../qml/Pages/Categories/Device.qml:127
 msgid "Manufacturer"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:76
+#: ../qml/Pages/Categories/Device.qml:78
 msgid "Codename"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:81
+#: ../qml/Pages/Categories/Device.qml:83
 msgid "Display"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:86
-msgid "Camera"
+#: ../qml/Pages/Categories/Device.qml:86 ../qml/Pages/Categories/Device.qml:136
+msgid "Name"
 msgstr ""
 
 #: ../qml/Pages/Categories/Device.qml:91
+msgid "Resolution"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:96
+msgid "Aspect ratio"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:109
+msgid "Density"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:114
+#: ../qml/Pages/Categories/Device.qml:153
+msgid "Orientation"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:121
+#: ../qml/Pages/Categories/Device.qml:146
+msgid "Portrait"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:122
+#: ../qml/Pages/Categories/Device.qml:147
+msgid "Landscape"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:133
+msgid "Camera"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:142
+msgid "Position"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:172
 msgid "Features"
 msgstr ""
 
@@ -134,11 +169,11 @@ msgid "Preferences"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:152
-msgid "SSH status"
+msgid "SSH (Remote control) status"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:156
-msgid "Developer mode/ADB status"
+msgid "ADB (Developer mode) status"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:160

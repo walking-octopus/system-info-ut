@@ -149,11 +149,11 @@ Page {
                 }
 
                 InfoItem {
-                    title: i18n.tr("SSH status")
+                    title: i18n.tr("SSH (Remote control) status")
                     value: systemInfo["ssh_enabled"] ? i18n.tr("Enabled") : i18n.tr("Disabled")
                 }
                 InfoItem {
-                    title: i18n.tr("Developer mode/ADB status")
+                    title: i18n.tr("ADB (Developer mode) status")
                     value: systemInfo["adb_enabled"] ? i18n.tr("Enabled") : i18n.tr("Disabled")
                 }
                 InfoItem {
