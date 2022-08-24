@@ -27,14 +27,14 @@ def get_props():
         row = row.strip().split('=')
         if len(row) != 2: continue
         props[row[0]] = row[1]
-  except getattr(__builtins__, 'FileNotFoundError', IOError):
+  except FileNotFoundError:
     return {}
   return props
 
 # TODO: Add a placeholder for non-existant values
 def system_image():
+  output = cmd("/usr/bin/system-image-cli -i").splitlines()
   fields = {}
-  output = cmd("/usr/bin/system-image-cli -i").strip().splitlines()
   for row in output:
     row = row.split(": ")
     if len(row) != 2: continue
@@ -49,13 +49,20 @@ def cmd(command):
   if result.returncode != 0:
     return "N/A"
   else:
-    return result.stdout.decode("utf-8")
+    return result.stdout.decode("utf-8").strip()
 
-def unwrap_or(value, fallback="N/A"):
-  if value is not None:
-    return value
-  else:
-    return fallback
+def cat(path):
+  try:
+    with open(path) as file:
+      return file.read().strip()
+  except FileNotFoundError:
+    return None
+
+# def unwrap_or(value, fallback="N/A"):
+#   if value is not None:
+#     return value
+#   else:
+#     return fallback
 
 def getSystem():
   uname = platform.uname()
@@ -128,7 +135,7 @@ def getLoadedModules():
   response = []
   for name in modulesNames:
     try:
-      version = open("/sys/module/" + name + "/version").read().strip()
+      version = cat("/sys/module/" + name + "/version")
     except FileNotFoundError:
       version = None;
 
@@ -140,15 +147,21 @@ def getLoadedModules():
   return response
 
 def getDevice():
-  # TODO: Add model fetching for mainline
-  # /sys/devices/virtual/dmi/id/product_name
-  # /sys/devices/virtual/dmi/id/product_family
-  # /sys/devices/virtual/dmi/id/sys_vendor
-
+  # Basic
   build_props = get_props()
-  model, brand = build_props.get("ro.product.model"), build_props.get("ro.product.brand")
-  manufacturer = build_props.get("ro.product.manufacturer")
-  code_name = build_props.get("ro.cm.device")
+
+  if build_props != {}:
+    model, brand = build_props.get("ro.product.model"), build_props.get("ro.product.brand")
+    manufacturer = build_props.get("ro.product.manufacturer")
+    code_name = build_props.get("ro.cm.device")
+  else:
+    model, brand = cat("/sys/devices/virtual/dmi/id/product_name"), cat("/sys/devices/virtual/dmi/id/product_family")
+    manufacturer = cat("/sys/devices/virtual/dmi/id/sys_vendor")
+    code_name = None
+
+  # Display and Camera are handled through their respective QML types
+
+  # Other (Fingerprint, etc)
 
   return {
     "basics": {

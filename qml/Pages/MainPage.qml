@@ -69,6 +69,9 @@ Page {
                     title: i18n.tr("Device")
                     iconName: "phone-smartphone-symbolic"
                     colorIndex: 5
+
+                    onClicked:
+                        python.loadCategory("../Pages/Categories/Device.qml", "system_info.getDevice")
                 }
 
                 // Your CPU, GPU, RAM, and storage.
