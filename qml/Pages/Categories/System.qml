@@ -165,6 +165,7 @@ Page {
                     text: i18n.tr("Halium")
                     subtext: i18n.tr("Halium allows us run Linux on the devices with pre-installed Android.")
                 }
+                // TODO: Show the device type (Halium | Legacy | Mainline)
 
                 InfoItem {
                     title: i18n.tr("Android subsystem version")

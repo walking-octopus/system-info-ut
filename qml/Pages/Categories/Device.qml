@@ -32,8 +32,6 @@ Page {
         title: i18n.tr('Device')
     }
 
-    // TODO: Plan out this category
-
     ScrollView {
         id: scrollView
         height: parent.height
