@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-24 19:44+0000\n"
+"POT-Creation-Date: 2022-08-25 20:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,71 +17,127 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../qml/Components/Formatter.js:2
+msgid "Empty"
+msgstr ""
+
+#: ../qml/Components/Formatter.js:6
+msgid "Bytes"
+msgstr ""
+
 #: ../qml/Pages/Categories/Device.qml:32 ../qml/Pages/MainPage.qml:69
 msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:62
+#: ../qml/Pages/Categories/Device.qml:60
 msgid "Basics"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:66
+#: ../qml/Pages/Categories/Device.qml:64
 msgid "Model"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:74 ../qml/Pages/Categories/Device.qml:127
+#: ../qml/Pages/Categories/Device.qml:72 ../qml/Pages/Categories/Device.qml:125
 msgid "Manufacturer"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:78
+#: ../qml/Pages/Categories/Device.qml:76
 msgid "Codename"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:83
+#: ../qml/Pages/Categories/Device.qml:81
 msgid "Display"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:86 ../qml/Pages/Categories/Device.qml:136
+#: ../qml/Pages/Categories/Device.qml:84 ../qml/Pages/Categories/Device.qml:134
 msgid "Name"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:91
+#: ../qml/Pages/Categories/Device.qml:89
 msgid "Resolution"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:96
+#: ../qml/Pages/Categories/Device.qml:94
 msgid "Aspect ratio"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:109
+#: ../qml/Pages/Categories/Device.qml:107
 msgid "Density"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:114
-#: ../qml/Pages/Categories/Device.qml:153
+#: ../qml/Pages/Categories/Device.qml:112
+#: ../qml/Pages/Categories/Device.qml:151
 msgid "Orientation"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:121
-#: ../qml/Pages/Categories/Device.qml:146
+#: ../qml/Pages/Categories/Device.qml:119
+#: ../qml/Pages/Categories/Device.qml:144
 msgid "Portrait"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:122
-#: ../qml/Pages/Categories/Device.qml:147
+#: ../qml/Pages/Categories/Device.qml:120
+#: ../qml/Pages/Categories/Device.qml:145
 msgid "Landscape"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:133
+#: ../qml/Pages/Categories/Device.qml:131
 msgid "Camera"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:142
+#: ../qml/Pages/Categories/Device.qml:140
 msgid "Position"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:172
-msgid "Features"
+#: ../qml/Pages/Categories/Hardware.qml:50 ../qml/Pages/MainPage.qml:79
+msgid "Hardware"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:80
+msgid "Usage"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:84
+msgid "CPU usage"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:100
+msgid "RAM usage"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:121
+msgid "Disk usage"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:143
+msgid "CPU Information"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:147
+msgid "Processor"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:151
+msgid "Cores"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:152
+msgid " cores"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:155
+msgid "Max Frequency"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:159
+msgid "Min Frequency"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:163
+msgid "Architecture"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:167
+msgid "Governor"
 msgstr ""
 
 #: ../qml/Pages/Categories/LoadedModules.qml:41
@@ -188,35 +244,35 @@ msgstr ""
 msgid "Halium allows us run Linux on the devices with pre-installed Android."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:170
+#: ../qml/Pages/Categories/System.qml:171
 msgid "Android subsystem version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:174
+#: ../qml/Pages/Categories/System.qml:175
 msgid "Android API level"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:178
+#: ../qml/Pages/Categories/System.qml:179
 msgid "Security patch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:182
+#: ../qml/Pages/Categories/System.qml:183
 msgid "Build fingerprint"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:186
+#: ../qml/Pages/Categories/System.qml:187
 msgid "Build date"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:190
+#: ../qml/Pages/Categories/System.qml:191
 msgid "Build ID"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:194
+#: ../qml/Pages/Categories/System.qml:195
 msgid "Build tags"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:198
+#: ../qml/Pages/Categories/System.qml:199
 msgid "Build type"
 msgstr ""
 
@@ -228,14 +284,10 @@ msgstr ""
 msgid "Ubuntu Info"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:79
-msgid "Hardware"
-msgstr ""
-
-#: ../qml/Pages/MainPage.qml:91
+#: ../qml/Pages/MainPage.qml:94
 msgid "Network"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:98
+#: ../qml/Pages/MainPage.qml:101
 msgid "Battery"
 msgstr ""

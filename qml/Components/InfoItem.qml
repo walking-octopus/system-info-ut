@@ -18,5 +18,7 @@ ListItem {
 
         title.text: rootItem.title
         subtitle.text: !!rootItem.value ? rootItem.value : "N/A"
+        subtitle.maximumLineCount: 2
+        subtitle.wrapMode: Text.Wrap
     }
 }

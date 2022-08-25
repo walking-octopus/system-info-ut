@@ -134,11 +134,8 @@ def getLoadedModules():
 
   response = []
   for name in modulesNames:
-    try:
-      version = cat("/sys/module/" + name + "/version")
-    except FileNotFoundError:
-      version = None;
-
+    version = cat("/sys/module/" + name + "/version")
+ 
     response.append({
       "name": name,
       "version": version
@@ -159,7 +156,7 @@ def getDevice():
     manufacturer = cat("/sys/devices/virtual/dmi/id/sys_vendor")
     code_name = None
 
-  # Display and Camera are handled through their respective QML types
+  # Display and Camera arselect start,end,processId,threadId from {} where correlationIde handled through their respective QML types
 
   # Other (Fingerprint, etc)
 
@@ -169,5 +166,59 @@ def getDevice():
       "brand": brand,
       "manufacturer": manufacturer,
       "code_name": code_name
+    }
+  }
+
+def getHardware():
+  # CPU
+  cpu_count = psutil.cpu_count()
+  cpu_arch = platform.processor()
+
+  cpu_max_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq")
+  cpu_min_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq")
+
+  cpu_name = subprocess.getstatusoutput("""awk -F '\\s*: | @' \
+    '/model name|Hardware|Processor|^cpu model|chip type|^cpu type/ {
+    cpu=$2; if ($1 == "Hardware") exit } END { print cpu }' /proc/cpuinfo""")[1]
+
+  return {
+    "cpu": {
+      "name": cpu_name,
+      "count": cpu_count,
+      "arch": cpu_arch,
+      "max_freq": cpu_max_freq,
+      "min_freq": cpu_min_freq,
+    }
+  }
+
+def getUsage():
+  # CPU
+  cpu_percent = psutil.cpu_percent()
+  cpu_governor = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
+  cpu_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")
+  # but you don't have permission to read it as a normal user.
+  # This 
+
+  # RAM
+  memory = psutil.virtual_memory()
+
+  # Disk
+  disk_usage = psutil.disk_usage("/home/")
+
+  return {
+    "cpu": {
+      "percent": cpu_percent,
+      "freq": cpu_freq,
+      "governor": cpu_governor
+    },
+    "ram": {
+      "percent": memory.percent,
+      "usage": memory.used,
+      "total": memory.total
+    },
+    "disk": {
+      "percent": disk_usage.percent,
+      "usage": disk_usage.used,
+      "total": disk_usage.total
     }
   }

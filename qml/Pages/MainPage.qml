@@ -84,6 +84,9 @@ Page {
 
                     icon.source: "../../assets/noun-cpu.svg"
                     colorIndex: 9
+
+                    onClicked:
+                        python.loadCategory("../Pages/Categories/Hardware.qml", "system_info.getHardware")
                 }
 
                 // WiFI, cellular network, and Bluetooth
