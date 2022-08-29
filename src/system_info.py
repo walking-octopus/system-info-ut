@@ -18,6 +18,8 @@ import platform
 import subprocess
 import psutil
 import os
+import re
+import requests
 
 def get_props():
   props = {}
@@ -41,9 +43,56 @@ def system_image():
     fields[row[0].replace(" ", "_")] = row[1]
   return fields
 
-def cmd(command):
+def nm_interfaces():
+  interfaces = cmd("nmcli -t -f DEVICE,TYPE,STATE device status")
+  if "N/A" in interfaces: return {}
+
+  parsed = {}
+  for data in interfaces.splitlines():
+    data = data.split(":")
+    name = list_get(data, 0)
+    type = list_get(data, 1)
+    is_connected = "connected" in list_get(data, 2)
+    is_virtual = "tunnel" in type or "loopback" in type or "bridge" in type
+
+    if is_virtual: continue
+    parsed[name] = {
+      "type": type,
+      "is_connected": is_connected
+    }
+
+  return parsed
+
+def nm_wifi():
+  interfaces = cmd("nmcli -t -f BSSID,ACTIVE,SSID,SIGNAL,RATE,FREQ,SECURITY dev wifi")
+  if interfaces == "N/A": return {}
+
+  parsed = {}
+  for data in interfaces.splitlines():
+    data = re.split(r'(?<!\\):', data)
+
+    bssid = list_get(data, 0).replace("\\:", ":")
+    is_active = "yes" in list_get(data, 1)
+    ssid = list_get(data, 2)
+    signal = list_get(data, 3)
+    rate = list_get(data, 4)
+    freq = list_get(data, 5)
+    security = list_get(data, 6)
+
+    if not is_active: continue
+    parsed[bssid] = {
+      "ssid": ssid,
+      "signal": signal,
+      "rate": rate,
+      "freq": freq,
+      "security": security,
+    }
+
+  return parsed
+
+def cmd(command, shell=False):
   try:
-    result = subprocess.run(command.split(" "), stdout=subprocess.PIPE)
+    result = subprocess.run(command.split(" "), shell=shell, stdout=subprocess.PIPE)
   except FileNotFoundError:
     return "N/A"
   if result.returncode != 0:
@@ -58,11 +107,11 @@ def cat(path):
   except FileNotFoundError:
     return None
 
-# def unwrap_or(value, fallback="N/A"):
-#   if value is not None:
-#     return value
-#   else:
-#     return fallback
+def list_get(list, index, fallback="N/A"):
+  try:
+    return list[index]
+  except IndexError:
+    return fallback
 
 def getSystem():
   uname = platform.uname()
@@ -196,8 +245,9 @@ def getUsage():
   cpu_percent = psutil.cpu_percent()
   cpu_governor = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
   cpu_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")
+
+  # There is a file descriptor for actual avarage frequency between cores,
   # but you don't have permission to read it as a normal user.
-  # This 
 
   # RAM
   memory = psutil.virtual_memory()
@@ -221,4 +271,38 @@ def getUsage():
       "usage": disk_usage.used,
       "total": disk_usage.total
     }
+  }
+
+def getNetwork():
+  # ifconfig = psutil.net_if_addrs()
+  # local_ips = cmd("hostname -I").split(" ")
+
+  # You could build a unified nm funtion for parsing nmcli outouts
+  # Also some devices may not have nmcli
+
+  current_interface = subprocess.getstatusoutput("ip route get 1.1.1.1 | grep -oP 'dev\s+\K[^ ]+'")[1]
+  current_ip = subprocess.getstatusoutput(
+    "ip addr show {interface} | grep 'inet ' | cut -d '/' -f1 | cut -d ' ' -f6"
+    .format(interface = current_interface)
+  )[1]
+
+  wifi_data = nm_wifi()
+  if wifi_data == {}: current_wifi = {}
+  else:
+    current_wifi = wifi_data.get(next(iter(wifi_data)))
+
+  nameservers = subprocess.getstatusoutput("( nmcli -f IP4.DNS,IP6.DNS dev list || nmcli -f IP4.DNS,IP6.DNS dev show ) 2>/dev/null | awk '/DNS/{print$NF}'")[1].splitlines()
+
+  try:
+    global_ip = requests.get("https://ipaddress.sh/").text.strip()
+  except:
+    global_ip = "N/A"
+
+  return {
+    "current_interface": current_interface,
+    "current_ip": current_ip,
+    "interfaces": nm_interfaces(),
+    "wifi": current_wifi,
+    "nameservers": nameservers,
+    "global_ip": global_ip
   }

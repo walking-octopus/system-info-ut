@@ -94,15 +94,18 @@ Page {
                     title: i18n.tr("Network")
                     iconName: "network-wifi-symbolic"
                     colorIndex: 8
+
+                    onClicked:
+                        python.loadCategory("../Pages/Categories/Network.qml", "system_info.getNetwork")
                 }
 
                 // Battery information
                 CategoryButton {
                     title: i18n.tr("Battery")
 
-                    // This icon looked blurry when looked up by name, so I've used the its svg
-                    icon.source: "../../assets/battery.svg"
+                    // This icon looked blurry when looked up by name, so I've downloaded the SVG
 
+                    icon.source: "../../assets/battery.svg"
                     colorIndex: 6
                 }
 

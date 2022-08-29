@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-25 20:52+0000\n"
+"POT-Creation-Date: 2022-08-29 17:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:60
+#: ../qml/Pages/Categories/Device.qml:60 ../qml/Pages/Categories/Network.qml:60
 msgid "Basics"
 msgstr ""
 
@@ -92,56 +92,128 @@ msgstr ""
 msgid "Hardware"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:80
+#: ../qml/Pages/Categories/Hardware.qml:78
 msgid "Usage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:84
+#: ../qml/Pages/Categories/Hardware.qml:82
 msgid "CPU usage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:100
+#: ../qml/Pages/Categories/Hardware.qml:98
 msgid "RAM usage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:121
+#: ../qml/Pages/Categories/Hardware.qml:119
 msgid "Disk usage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:143
+#: ../qml/Pages/Categories/Hardware.qml:141
 msgid "CPU Information"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:147
+#: ../qml/Pages/Categories/Hardware.qml:145
 msgid "Processor"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:151
+#: ../qml/Pages/Categories/Hardware.qml:149
 msgid "Cores"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:152
+#: ../qml/Pages/Categories/Hardware.qml:150
 msgid " cores"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:155
+#: ../qml/Pages/Categories/Hardware.qml:153
 msgid "Max Frequency"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:159
+#: ../qml/Pages/Categories/Hardware.qml:157
 msgid "Min Frequency"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:163
+#: ../qml/Pages/Categories/Hardware.qml:161
 msgid "Architecture"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:167
+#: ../qml/Pages/Categories/Hardware.qml:165
 msgid "Governor"
 msgstr ""
 
 #: ../qml/Pages/Categories/LoadedModules.qml:41
 msgid "Loaded modules"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:32 ../qml/Pages/MainPage.qml:94
+msgid "Network"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:64
+msgid "Local IP"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:68
+msgid "Current interface"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:81
+msgid "Global IP"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:82
+msgid "Offline"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:85
+msgid "DNS"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:90
+msgid "WiFi"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:93
+msgid "SSID"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:97
+msgid "Signal strength"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:102
+msgid "Freqency"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:107
+msgid "Link speed"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:111
+msgid "Security"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:117
+msgid "Interfaces"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:120
+msgid "Names"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:124
+msgid "Types"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:130
+msgid "Status"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:132
+msgid "Connected"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:132
+msgid "Inactive"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:59
@@ -284,10 +356,6 @@ msgstr ""
 msgid "Ubuntu Info"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:94
-msgid "Network"
-msgstr ""
-
-#: ../qml/Pages/MainPage.qml:101
+#: ../qml/Pages/MainPage.qml:104
 msgid "Battery"
 msgstr ""
