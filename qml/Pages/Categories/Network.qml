@@ -120,14 +120,14 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("Types")
-                    value: systemInfo["interfaces"]
-                        .map((i) => i.type + "°")
+                    value: Object.values(systemInfo["interfaces"])
+                        .map((i) => i.type)
                         .join(" | ")
                 }
                 InfoItem {
                     title: i18n.tr("Status")
-                    value: systemInfo["interfaces"]
-                        .map((i) => i.is_active ? i18n.tr("Connected") : i18n.tr("Inactive"))
+                    value: Object.values(systemInfo["interfaces"])
+                        .map((i) => i.is_connected ? i18n.tr("Connected") : i18n.tr("Inactive"))
                         .join(" | ")
                 }
 

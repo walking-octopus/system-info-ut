@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-29 17:53+0000\n"
+"POT-Creation-Date: 2022-09-01 12:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,44 @@ msgstr ""
 msgid "Bytes"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:32 ../qml/Pages/MainPage.qml:69
+#: ../qml/Components/InfoItem.qml:13
+msgid "Copied!"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:30
+#: ../qml/Pages/Categories/Network.qml:30 ../qml/Pages/MainPage.qml:102
+msgid "Network"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:58
+msgid "WIP"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:62
+#: ../qml/Pages/Categories/Network.qml:62
+msgid "Local IP"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:66
+#: ../qml/Pages/Categories/Network.qml:83
+msgid "DNS"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:70
+#: ../qml/Pages/Categories/Network.qml:105
+msgid "Link speed"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:74
+#: ../qml/Pages/Categories/Network.qml:109
+msgid "Security"
+msgstr ""
+
+#: ../qml/Pages/Categories/Device.qml:32 ../qml/Pages/MainPage.qml:77
 msgid "Device"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:60 ../qml/Pages/Categories/Network.qml:60
+#: ../qml/Pages/Categories/Device.qml:60 ../qml/Pages/Categories/Network.qml:58
 msgid "Basics"
 msgstr ""
 
@@ -88,7 +121,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:50 ../qml/Pages/MainPage.qml:79
+#: ../qml/Pages/Categories/Hardware.qml:50 ../qml/Pages/MainPage.qml:87
 msgid "Hardware"
 msgstr ""
 
@@ -144,79 +177,59 @@ msgstr ""
 msgid "Loaded modules"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:32 ../qml/Pages/MainPage.qml:94
-msgid "Network"
-msgstr ""
-
-#: ../qml/Pages/Categories/Network.qml:64
-msgid "Local IP"
-msgstr ""
-
-#: ../qml/Pages/Categories/Network.qml:68
+#: ../qml/Pages/Categories/Network.qml:66
 msgid "Current interface"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:81
+#: ../qml/Pages/Categories/Network.qml:79
 msgid "Global IP"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:82
+#: ../qml/Pages/Categories/Network.qml:80
 msgid "Offline"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:85
-msgid "DNS"
-msgstr ""
-
-#: ../qml/Pages/Categories/Network.qml:90
+#: ../qml/Pages/Categories/Network.qml:88
 msgid "WiFi"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:93
+#: ../qml/Pages/Categories/Network.qml:91
 msgid "SSID"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:97
+#: ../qml/Pages/Categories/Network.qml:95
 msgid "Signal strength"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:102
+#: ../qml/Pages/Categories/Network.qml:100
 msgid "Freqency"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:107
-msgid "Link speed"
-msgstr ""
-
-#: ../qml/Pages/Categories/Network.qml:111
-msgid "Security"
-msgstr ""
-
-#: ../qml/Pages/Categories/Network.qml:117
+#: ../qml/Pages/Categories/Network.qml:115
 msgid "Interfaces"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:120
+#: ../qml/Pages/Categories/Network.qml:118
 msgid "Names"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:124
+#: ../qml/Pages/Categories/Network.qml:122
 msgid "Types"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:130
+#: ../qml/Pages/Categories/Network.qml:128
 msgid "Status"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:132
+#: ../qml/Pages/Categories/Network.qml:130
 msgid "Connected"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:132
+#: ../qml/Pages/Categories/Network.qml:130
 msgid "Inactive"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:59
+#: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:67
 msgid "System"
 msgstr ""
 
@@ -356,6 +369,6 @@ msgstr ""
 msgid "Ubuntu Info"
 msgstr ""
 
-#: ../qml/Pages/MainPage.qml:104
+#: ../qml/Pages/MainPage.qml:112
 msgid "Battery"
 msgstr ""
