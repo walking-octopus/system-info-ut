@@ -28,7 +28,15 @@ Page {
     header: PageHeader {
         id: header
         title: python.isLoading ? i18n.tr("Collecting data...") : i18n.tr('Ubuntu Info')
-        // TODO: Add a LoadingBar
+        
+        ProgressBar {
+            indeterminate: true
+            visible: python.isLoading
+            
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+        }
     }
 
     ScrollView {
