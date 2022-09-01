@@ -31,6 +31,8 @@ MainView {
     width: units.gu(80)
     height: units.gu(70)
 
+    Toast { id: toast }
+
     PageStack { id: pStack }
     
     Backend {

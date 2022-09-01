@@ -9,8 +9,10 @@ ListItem {
     // visible: !!rootItem.value
 
     // TODO: Show a toast when copying data
-    onClicked:
+    onClicked: {
+        toast.show(i18n.tr("Copied!"))
         Clipboard.push(`${layout.title.text}: ${layout.subtitle.text}`)
+    }
 
     ListItemLayout {
         id: layout
