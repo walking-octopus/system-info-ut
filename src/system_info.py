@@ -306,3 +306,21 @@ def getNetwork():
     "nameservers": nameservers,
     "global_ip": global_ip
   }
+
+def getBattery():
+    output = cmd("upower -i /org/freedesktop/UPower/devices/battery_battery")
+    infoDict = {}
+
+    for line in output.splitlines():
+        fields = line.split(": ")
+        fields = [i.strip() for i in fields]
+        if len(fields) is not 2: continue
+        fields[0] = fields[0].replace(" ", "-")
+        fields[1] = fields[1].replace("'", '')
+        if ("yes" or "no") in fields[1]: fields[1] = "yes" in fields[1]
+        infoDict[fields[0]] = fields[1]
+
+    # TODO: Read additional info from file descriptors and merge the info (prioritizing upower)
+    # TODO: Consider attempting to estimate current battery capacity by looking through upower charge history
+
+    return infoDict

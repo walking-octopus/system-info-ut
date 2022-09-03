@@ -115,6 +115,9 @@ Page {
 
                     icon.source: "../../assets/battery.svg"
                     colorIndex: 6
+
+                    onClicked:
+                        python.loadCategory("../Pages/Categories/Battery.qml", "system_info.getBattery")
                 }
 
                 // TODO: How about a Sensors category?
