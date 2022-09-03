@@ -23,13 +23,17 @@ AbstractButton {
 
     height: units.gu(22)
     width: parent.width > units.gu(38) ?
-        (flow.width * 0.5) - (flow.spacing * 0.5)
+        parent.width < units.gu(80) ?
+            (flow.width * 0.5) - (flow.spacing * 0.5)
+            : units.gu(22)
         : parent.width
+
+    // Nested ternary operators look weird...
 
     // RGB channels from 'shape.color' are in [0; 1] range.
     property color foregroundColor: ((shape.color.r * 0.30 + shape.color.g * 0.6 + shape.color.b * 0.12) > 0.6) ? UbuntuColors.darkGrey : "#F3F3E7"
 
-    // FIXME: Remove this mess
+    // TODO: Use a dictionary for more recognizable color names
     readonly property color color: ["#f0f0f0", "#ed3146", "#d4326b", "#e95420", "#f89b0f", "#f5d412", "#46c54f", "#14cfa8", "#19b6ee", "#4e46c5", "#9542c4", "#c343bf"][colorIndex]
     
     property int colorIndex: 0;
