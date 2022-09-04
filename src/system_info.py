@@ -32,8 +32,9 @@ def get_props():
   except PermissionError:
     output = cmd("getprop")
     if output == "N/A": return {}
-    cols = [i.split(": ") for i in output.replace("[", '').replace(']', '').splitlines()]
-    for row in cols:
+
+    columns = [[re.search(r"\[(.*)\]", i).group(1) for i in line.split(": ")] for line in output.splitlines()]
+    for row in columns:
       if len(row) != 2: continue
       props[row[0]] = row[1]
   except FileNotFoundError:
