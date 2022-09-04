@@ -29,12 +29,15 @@ def get_props():
         row = row.strip().split('=')
         if len(row) != 2: continue
         props[row[0]] = row[1]
-  except FileNotFoundError:
-    return {}
   except PermissionError:
     output = cmd("getprop")
     if output == "N/A": return {}
-    return [i.split(": ") for i in output.replace("[", '').replace(']', '').splitlines()]
+    cols = [i.split(": ") for i in output.replace("[", '').replace(']', '').splitlines()]
+    for row in cols:
+      if len(row) != 2: continue
+      props[row[0]] = row[1]
+  except FileNotFoundError:
+    return {}
   return props
 
 # TODO: Add a placeholder for non-existant values
