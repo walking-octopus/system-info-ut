@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-04 12:46+0000\n"
+"POT-Creation-Date: 2022-09-04 13:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,12 +34,12 @@ msgid "Copied!"
 msgstr ""
 
 #: ../qml/Pages/Categories/Battery.qml:30
-#: ../qml/Pages/Categories/Network.qml:30 ../qml/Pages/MainPage.qml:102
+#: ../qml/Pages/Categories/Network.qml:35 ../qml/Pages/MainPage.qml:102
 msgid "Network"
 msgstr ""
 
 #: ../qml/Pages/Categories/Battery.qml:61 ../qml/Pages/Categories/Device.qml:60
-#: ../qml/Pages/Categories/Network.qml:58
+#: ../qml/Pages/Categories/Network.qml:63
 msgid "Basics"
 msgstr ""
 
@@ -51,27 +51,31 @@ msgstr ""
 msgid "State"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:94
+#: ../qml/Pages/Categories/Battery.qml:93
+msgid "Time to empty"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:99
 msgid "Health"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:97
+#: ../qml/Pages/Categories/Battery.qml:102
 msgid "Temperature"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:101
+#: ../qml/Pages/Categories/Battery.qml:106
 msgid "Warning level"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:105
+#: ../qml/Pages/Categories/Battery.qml:110
 msgid "Voltage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:112
+#: ../qml/Pages/Categories/Battery.qml:117
 msgid "Other"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:115
+#: ../qml/Pages/Categories/Battery.qml:120
 msgid "Technology"
 msgstr ""
 
@@ -190,71 +194,71 @@ msgstr ""
 msgid "Loaded modules"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:62
+#: ../qml/Pages/Categories/Network.qml:67
 msgid "Local IP"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:66
+#: ../qml/Pages/Categories/Network.qml:71
 msgid "Current interface"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:79
+#: ../qml/Pages/Categories/Network.qml:84
 msgid "Global IP"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:80
+#: ../qml/Pages/Categories/Network.qml:85
 msgid "Offline"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:83
+#: ../qml/Pages/Categories/Network.qml:88
 msgid "DNS"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:88
+#: ../qml/Pages/Categories/Network.qml:93
 msgid "WiFi"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:91
+#: ../qml/Pages/Categories/Network.qml:96
 msgid "SSID"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:95
+#: ../qml/Pages/Categories/Network.qml:100
 msgid "Signal strength"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:100
+#: ../qml/Pages/Categories/Network.qml:105
 msgid "Freqency"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:105
+#: ../qml/Pages/Categories/Network.qml:110
 msgid "Link speed"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:109
+#: ../qml/Pages/Categories/Network.qml:114
 msgid "Security"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:115
+#: ../qml/Pages/Categories/Network.qml:120
 msgid "Interfaces"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:118
+#: ../qml/Pages/Categories/Network.qml:123
 msgid "Names"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:122
+#: ../qml/Pages/Categories/Network.qml:127
 msgid "Types"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:128
+#: ../qml/Pages/Categories/Network.qml:133
 msgid "Status"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:130
+#: ../qml/Pages/Categories/Network.qml:135
 msgid "Connected"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:130
+#: ../qml/Pages/Categories/Network.qml:135
 msgid "Inactive"
 msgstr ""
 

@@ -27,7 +27,7 @@ Page {
     title: header.title
     header: PageHeader {
         id: header
-        title: i18n.tr('Network')
+        title: i18n.tr('Battery')
     }
 
     ScrollView {
