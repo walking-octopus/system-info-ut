@@ -1,4 +1,4 @@
-<img height="128" src="./assets/logo.svg" align="left"/>
+<img height="128" src="./assets/logo.png" align="left"/>
 
 # Ubuntu Info
 
