@@ -2,8 +2,15 @@
 
 # Ubuntu Info
 
-A system info beautiful app for Ubuntu Touch.
+A beautiful system info app for Ubuntu Touch.
 _____________________________________________
+
+<img src="https://open-store.io/screenshots/system-info.walking-octopus-screenshot-4ff4fa94-9a16-4ad4-9e1a-ee12fd8618ce.png" alt="Screenshot" width="200" />
+
+## Features:
+ - Beautiful design: Endless lists of poorly labeled items are out of fashion! Quickly find what you're searching for in this modern app.
+ - Forever free: No need to allow shady black boxes on your device just to view conveniently view some info. This app is free and open-source forever.
+ - Community-built: Miss something? Just fill out an issue or submit a merge request and it will be added in no time!
 
 ## Building 
 
@@ -13,7 +20,7 @@ _____________________________________________
 - Python3 / pip3
 - Clickable (get it from [here](https://clickable-ut.dev/en/latest/index.html))
 
-Use Clickable to build and package Translate as a Click package ready to be installed on Ubuntu Touch
+Use Clickable to build and build it as Click package ready to be installed on Ubuntu Touch
 
 ### Build instructions
 Make sure you clone the project with
@@ -38,5 +45,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please help our translation efforts by following [these instructions](https://github.com/walking-octopus/system-info-ut/tree/main/po/README.md).
 
 ## License
-The project is licensed under the [GPL-3.0](https://opensource.org/licenses/GPL-3.0).
-The [CPU icon](https://thenounproject.com/icon/cpu-156717/) was made by Arthur Shlain from The Noun Project (CC).
+ - The project is licensed under the [GPL-3.0](https://opensource.org/licenses/GPL-3.0).
+ - The [CPU icon](https://thenounproject.com/icon/cpu-156717/) was made by Arthur Shlain from The Noun Project (CC).
+ - The logo uses the `info` icon from Suru.
