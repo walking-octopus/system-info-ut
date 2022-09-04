@@ -87,7 +87,12 @@ Page {
                 //     title: i18n.tr("Charging rate")
                 //     value: systemInfo["energy-rate"]
                 //     // TODO: Calculating the charging rate in percent per minute can be more understandable
+                //     // I wasn't sure about the meaning of `energy-rate`, so I commented it out.
                 // }
+                InfoItem {
+                    title: i18n.tr("Time to empty")
+                    value: systemInfo["time-to-empty"]
+                }
 
                 // Battery health
                 SectionDivider {
