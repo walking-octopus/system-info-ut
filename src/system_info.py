@@ -185,6 +185,7 @@ def getSystem():
 
 def getLoadedModules():
   modulesNames = os.listdir("/sys/module/")
+  modulesNames.sort()
 
   response = []
   for name in modulesNames:
