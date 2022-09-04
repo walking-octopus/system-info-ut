@@ -32,8 +32,9 @@ def get_props():
   except FileNotFoundError:
     return {}
   except PermissionError:
+    # FIXME: It's a bit hacky to show an error in this way, but it's better than nothing.
     return {
-      "ro.build.version.release": "Error fetching `build.prop`. Contact your device maintainer"
+      "ro.build.version.release": "Error fetching `build.prop`. Contact your device maintainer."
     }
   return props
 
@@ -57,7 +58,7 @@ def nm_interfaces():
     name = list_get(data, 0)
     type = list_get(data, 1)
     is_connected = "connected" in list_get(data, 2)
-    is_virtual = ("tunnel" or "loopback" or "bridge" or "dummy") in type
+    is_virtual = ("tunnel" or "loopback" or "bridge" or "dummy" or "unknown") in type
 
     if is_virtual: continue
     parsed[name] = {
