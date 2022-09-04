@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-04 13:24+0000\n"
+"POT-Creation-Date: 2022-09-04 13:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,9 +33,8 @@ msgstr ""
 msgid "Copied!"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:30
-#: ../qml/Pages/Categories/Network.qml:35 ../qml/Pages/MainPage.qml:102
-msgid "Network"
+#: ../qml/Pages/Categories/Battery.qml:30 ../qml/Pages/MainPage.qml:112
+msgid "Battery"
 msgstr ""
 
 #: ../qml/Pages/Categories/Battery.qml:61 ../qml/Pages/Categories/Device.qml:60
@@ -183,6 +182,7 @@ msgid "Min Frequency"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:161
+#: ../qml/Pages/Categories/System.qml:90
 msgid "Architecture"
 msgstr ""
 
@@ -192,6 +192,10 @@ msgstr ""
 
 #: ../qml/Pages/Categories/LoadedModules.qml:41
 msgid "Loaded modules"
+msgstr ""
+
+#: ../qml/Pages/Categories/Network.qml:35 ../qml/Pages/MainPage.qml:102
+msgid "Network"
 msgstr ""
 
 #: ../qml/Pages/Categories/Network.qml:67
@@ -288,10 +292,6 @@ msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:82
 msgid "Kernel version"
-msgstr ""
-
-#: ../qml/Pages/Categories/System.qml:90
-msgid "Device arch"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:94
@@ -400,8 +400,4 @@ msgstr ""
 
 #: ../qml/Pages/MainPage.qml:30 system-info.desktop.in.h:1
 msgid "Ubuntu Info"
-msgstr ""
-
-#: ../qml/Pages/MainPage.qml:112
-msgid "Battery"
 msgstr ""

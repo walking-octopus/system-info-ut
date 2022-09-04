@@ -87,7 +87,7 @@ Page {
                     // but since it determines if a binary is compatible
                     // with your system, but might as well be here.
 
-                    title: i18n.tr("Device arch")
+                    title: i18n.tr("Architecture")
                     value: systemInfo["uname"]["arch"]
                 }
                 InfoItem {
