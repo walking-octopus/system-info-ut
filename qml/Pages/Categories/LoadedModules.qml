@@ -38,7 +38,7 @@ Page {
     header: PageHeader {
         id: header
         flickable: view
-        title: i18n.tr("Loaded modules")
+        title: i18n.tr("Loaded modules") // TODO: Maybe add the number of loaded modules too.
     }
 
     ListView {

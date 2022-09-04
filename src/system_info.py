@@ -226,8 +226,11 @@ def getDevice():
 
 def getHardware():
   # CPU
-  cpu_count = psutil.cpu_count()
   cpu_arch = platform.processor()
+
+  # cpu_count = psutil.cpu_count() # This seems broken...
+  cpu_count = subprocess.getstatusoutput("grep -c ^processor /proc/cpuinfo")[1]
+  # FIXME: Add a funtion to parse this file! Remove these hacks!
 
   cpu_max_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq")
   cpu_min_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq")
