@@ -2,7 +2,7 @@
 
 # Ubuntu Info
 
-A system info beautiful app for Ubuntu Touch.
+A beautiful system info app for Ubuntu Touch.
 _____________________________________________
 
 ## Building 
@@ -13,7 +13,7 @@ _____________________________________________
 - Python3 / pip3
 - Clickable (get it from [here](https://clickable-ut.dev/en/latest/index.html))
 
-Use Clickable to build and package Translate as a Click package ready to be installed on Ubuntu Touch
+Use Clickable to build and build it as Click package ready to be installed on Ubuntu Touch
 
 ### Build instructions
 Make sure you clone the project with
@@ -38,5 +38,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please help our translation efforts by following [these instructions](https://github.com/walking-octopus/system-info-ut/tree/main/po/README.md).
 
 ## License
-The project is licensed under the [GPL-3.0](https://opensource.org/licenses/GPL-3.0).
-The [CPU icon](https://thenounproject.com/icon/cpu-156717/) was made by Arthur Shlain from The Noun Project (CC).
+ - The project is licensed under the [GPL-3.0](https://opensource.org/licenses/GPL-3.0).
+ - The [CPU icon](https://thenounproject.com/icon/cpu-156717/) was made by Arthur Shlain from The Noun Project (CC).
+ - The logo uses the `info` icon from Suru.
