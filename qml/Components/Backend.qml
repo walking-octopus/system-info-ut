@@ -25,6 +25,6 @@ Python {
 
     onError: {
         print(`Python error: ${traceback}`);
-        // error(i18n.tr("Unknown error. View the logs for more info."));
+        toast.show(i18n.tr("Critical error. View the logs for more info."));
     }
 }
