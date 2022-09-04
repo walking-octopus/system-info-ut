@@ -32,10 +32,9 @@ def get_props():
   except FileNotFoundError:
     return {}
   except PermissionError:
-    # FIXME: It's a bit hacky to show an error in this way, but it's better than nothing.
-    return {
-      "ro.build.version.release": "Error fetching `build.prop`. Contact your device maintainer."
-    }
+    output = cmd("getprop")
+    if output == "N/A": return {}
+    return [i.split(": ") for i in output.replace("[", '').replace(']', '').splitlines()]
   return props
 
 # TODO: Add a placeholder for non-existant values
