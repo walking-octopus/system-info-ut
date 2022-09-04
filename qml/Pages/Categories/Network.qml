@@ -22,7 +22,12 @@ Page {
     anchors.fill: parent
 
     property var systemInfo
-    Component.onCompleted: print(JSON.stringify(systemInfo, null, 2))
+    Component.onCompleted: {
+        let copiedSystemInfo = JSON.parse(JSON.stringify(systemInfo));
+        copiedSystemInfo.global_ip = "REDACTED";
+
+        print(JSON.stringify(copiedSystemInfo, null, 2))
+    }
 
     title: header.title
     header: PageHeader {
