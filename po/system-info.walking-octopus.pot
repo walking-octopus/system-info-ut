@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-04 13:59+0000\n"
+"POT-Creation-Date: 2022-09-04 14:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,7 +191,7 @@ msgid "Governor"
 msgstr ""
 
 #: ../qml/Pages/Categories/LoadedModules.qml:41
-msgid "Loaded modules"
+msgid "Loaded modules (%1)"
 msgstr ""
 
 #: ../qml/Pages/Categories/Network.qml:35 ../qml/Pages/MainPage.qml:102

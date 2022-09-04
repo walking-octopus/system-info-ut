@@ -38,20 +38,25 @@ Page {
     header: PageHeader {
         id: header
         flickable: view
-        title: i18n.tr("Loaded modules") // TODO: Maybe add the number of loaded modules too.
+        title: i18n.tr("Loaded modules (%1)").arg(moduleModel.count)
     }
 
-    ListView {
-        id: view
+    ScrollView {
+        id: scrollView
         anchors.fill: parent
 
-        model: moduleModel
-        delegate: ListItem {
-            ListItemLayout {
-                anchors.centerIn: parent
+        ListView {
+            id: view
+            anchors.fill: parent
 
-                title.text: name
-                subtitle.text: version
+            model: moduleModel
+            delegate: ListItem {
+                ListItemLayout {
+                    anchors.centerIn: parent
+
+                    title.text: name
+                    subtitle.text: !!version ? version : "";
+                }
             }
         }
     }
