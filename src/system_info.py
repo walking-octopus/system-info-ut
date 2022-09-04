@@ -31,6 +31,10 @@ def get_props():
         props[row[0]] = row[1]
   except FileNotFoundError:
     return {}
+  except PermissionError:
+    return {
+      "ro.build.version.release": "Error fetching `build.prop`. Contact your device maintainer"
+    }
   return props
 
 # TODO: Add a placeholder for non-existant values
@@ -53,7 +57,7 @@ def nm_interfaces():
     name = list_get(data, 0)
     type = list_get(data, 1)
     is_connected = "connected" in list_get(data, 2)
-    is_virtual = "tunnel" in type or "loopback" in type or "bridge" in type
+    is_virtual = ("tunnel" or "loopback" or "bridge" or "dummy") in type
 
     if is_virtual: continue
     parsed[name] = {
@@ -228,7 +232,7 @@ def getHardware():
 
   cpu_name = subprocess.getstatusoutput("""awk -F '\\s*: | @' \
     '/model name|Hardware|Processor|^cpu model|chip type|^cpu type/ {
-    cpu=$2; if ($1 == "Hardware") exit } END { print cpu }' /proc/cpuinfo""")[1]
+    cpu=$2; if ($1 == "Hardware") exit } END { print cpu }' /proc/cpuinfo""")[1] # FIXME: This may crash.
 
   return {
     "cpu": {
@@ -286,12 +290,15 @@ def getNetwork():
     .format(interface = current_interface)
   )[1]
 
+  # FIXME: This may crash!
+
   wifi_data = nm_wifi()
   if wifi_data == {}: current_wifi = {}
   else:
     current_wifi = wifi_data.get(next(iter(wifi_data)))
 
   nameservers = subprocess.getstatusoutput("( nmcli -f IP4.DNS,IP6.DNS dev list || nmcli -f IP4.DNS,IP6.DNS dev show ) 2>/dev/null | awk '/DNS/{print$NF}'")[1].splitlines()
+  # FIXME: This may crash!
 
   try:
     global_ip = requests.get("https://ipaddress.sh/").text.strip()
