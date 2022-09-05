@@ -139,10 +139,10 @@ def cmd_shell(command):
     return result[1]
 
 def cat(path):
-  try:
+  if os.access(path, os.R_OK):
     with open(path) as file:
       return file.read().strip()
-  except FileNotFoundError:
+  else:
     return None
 
 def list_get(list, index, fallback="N/A"):
@@ -317,8 +317,8 @@ def getNetwork():
 
   try:
     global_ip = requests.get("https://ipaddress.sh/").text.strip()
-  except:
-    global_ip = "N/A"
+  except ConnectionError: # I wonder if I can get more specific.
+    global_ip = None
 
   return {
     "current_interface": current_interface,

@@ -82,7 +82,7 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("Global IP")
-                    value: systemInfo["global_ip"] != "N/A" ? systemInfo["global_ip"] : i18n.tr("Offline")
+                    value: !!systemInfo["global_ip"] ? systemInfo["global_ip"] : i18n.tr("Offline")
                 }
                 InfoItem {
                     title: i18n.tr("DNS")
