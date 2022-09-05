@@ -82,7 +82,7 @@ def nm_interfaces():
     name = list_get(data, 0)
     type = list_get(data, 1)
     is_connected = "connected" in list_get(data, 2)
-    is_virtual = type in {"tunnel", "loopback", "bridge", "dummy", "unknown"}
+    is_virtual = type in {"iptunnel", "loopback", "bridge", "dummy", "unknown"}
 
     if is_virtual: continue
     parsed[name] = {

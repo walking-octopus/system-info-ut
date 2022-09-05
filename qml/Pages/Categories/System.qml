@@ -63,8 +63,13 @@ Page {
                 }
 
                 InfoItem {
-                    title: i18n.tr("OTA version")
-                    value: systemInfo["system-image"]["ota_version"]
+                    title: systemInfo["system-image"]["update_channel"] && systemInfo["system-image"]["update_channel"].includes("stable") ?
+                        i18n.tr("OTA version") :
+                        i18n.tr("System version")
+
+                    value: systemInfo["system-image"]["update_channel"] && systemInfo["system-image"]["update_channel"].includes("stable") ?
+                        systemInfo["system-image"]["ota_version"] :
+                        systemInfo["system-image"]["version_version"]
                 }
                 InfoItem {
                     title: i18n.tr("Update channel")

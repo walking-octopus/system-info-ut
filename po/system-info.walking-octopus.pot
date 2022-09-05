@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-05 15:01+0000\n"
+"POT-Creation-Date: 2022-09-05 15:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,7 +182,7 @@ msgid "Min Frequency"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:161
-#: ../qml/Pages/Categories/System.qml:90
+#: ../qml/Pages/Categories/System.qml:95
 msgid "Architecture"
 msgstr ""
 
@@ -274,123 +274,127 @@ msgstr ""
 msgid "OS"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:66
+#: ../qml/Pages/Categories/System.qml:67
 msgid "OTA version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:70
+#: ../qml/Pages/Categories/System.qml:68
+msgid "System version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:75
 msgid "Update channel"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:74
+#: ../qml/Pages/Categories/System.qml:79
 msgid "Last update"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:78
+#: ../qml/Pages/Categories/System.qml:83
 msgid "Ubuntu version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:82
+#: ../qml/Pages/Categories/System.qml:87
 msgid "Kernel version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:94
+#: ../qml/Pages/Categories/System.qml:99
 msgid "Root file-system status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:95
+#: ../qml/Pages/Categories/System.qml:100
 msgid "Locked"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:95
+#: ../qml/Pages/Categories/System.qml:100
 msgid "Unlocked"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:98
+#: ../qml/Pages/Categories/System.qml:103
 msgid "Hostname"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:102
+#: ../qml/Pages/Categories/System.qml:107
 msgid "Uptime"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:123
+#: ../qml/Pages/Categories/System.qml:128
 msgid "AppArmor status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:124
-#: ../qml/Pages/Categories/System.qml:153
-#: ../qml/Pages/Categories/System.qml:157
+#: ../qml/Pages/Categories/System.qml:129
+#: ../qml/Pages/Categories/System.qml:158
+#: ../qml/Pages/Categories/System.qml:162
 msgid "Disabled"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:124
-#: ../qml/Pages/Categories/System.qml:153
-#: ../qml/Pages/Categories/System.qml:157
+#: ../qml/Pages/Categories/System.qml:129
+#: ../qml/Pages/Categories/System.qml:158
+#: ../qml/Pages/Categories/System.qml:162
 msgid "Enabled"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:133
+#: ../qml/Pages/Categories/System.qml:138
 msgid "View loaded modules"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:134
+#: ../qml/Pages/Categories/System.qml:139
 msgid "This may help troubleshoot device issues."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:148
+#: ../qml/Pages/Categories/System.qml:153
 msgid "Preferences"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:152
+#: ../qml/Pages/Categories/System.qml:157
 msgid "SSH (Remote control) status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:156
+#: ../qml/Pages/Categories/System.qml:161
 msgid "ADB (Developer mode) status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:160
+#: ../qml/Pages/Categories/System.qml:165
 msgid "Language"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:165
+#: ../qml/Pages/Categories/System.qml:170
 msgid "Halium"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:166
+#: ../qml/Pages/Categories/System.qml:171
 msgid "Halium allows us run Linux on the devices with pre-installed Android."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:171
+#: ../qml/Pages/Categories/System.qml:176
 msgid "Android subsystem version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:175
+#: ../qml/Pages/Categories/System.qml:180
 msgid "Android API level"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:179
+#: ../qml/Pages/Categories/System.qml:184
 msgid "Security patch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:183
+#: ../qml/Pages/Categories/System.qml:188
 msgid "Build fingerprint"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:187
+#: ../qml/Pages/Categories/System.qml:192
 msgid "Build date"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:191
+#: ../qml/Pages/Categories/System.qml:196
 msgid "Build ID"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:195
+#: ../qml/Pages/Categories/System.qml:200
 msgid "Build tags"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:199
+#: ../qml/Pages/Categories/System.qml:204
 msgid "Build type"
 msgstr ""
 
