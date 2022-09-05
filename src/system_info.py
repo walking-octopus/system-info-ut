@@ -24,13 +24,7 @@ import requests
 # Try except in getting the props is useless, since the system mounted by halium can be only accessed by privileged users
 def get_props():
   props = {}
-  try:
-    with open('/system/build.prop', mode='r', newline='\n') as input_file:
-      for row in input_file.read().splitlines():
-        row = row.strip().split('=')
-        if len(row) != 2: continue
-        props[row[0]] = row[1]
-  except PermissionError:
+  if os.path.exists("/system/build.prop"):
     output = cmd("getprop")
     if output == "N/A": return {}
 
@@ -38,7 +32,7 @@ def get_props():
     for row in columns:
       if len(row) != 2: continue
       props[row[0]] = row[1]
-  except FileNotFoundError:
+  else:
     return {}
   return props
 
@@ -117,9 +111,9 @@ def cat(path):
     return None
 
 def list_get(list, index, fallback="N/A"):
-  try:
+  if len(list) > index:
     return list[index]
-  except IndexError:
+  else:
     return fallback
 
 def getSystem():
