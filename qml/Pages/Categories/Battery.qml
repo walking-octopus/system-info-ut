@@ -66,7 +66,7 @@ Page {
                     value: systemInfo["percentage"]
 
                     ProgressBar {
-                        value: systemInfo["percentage"].replace('%', '')
+                        value: !!systemInfo["percentage"] ? systemInfo["percentage"].replace('%', '') : 0
                         minimumValue: 0; maximumValue: 100
 
                         anchors.bottom: parent.bottom
@@ -78,6 +78,7 @@ Page {
                     title: i18n.tr("State")
                     value: {
                         function capitalizeFirstLetter(string) {
+                            if (!string) return ""
                             return string.charAt(0).toUpperCase() + string.slice(1);
                         }
                         capitalizeFirstLetter(systemInfo["state"])
@@ -100,7 +101,7 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("Temperature")
-                    value: systemInfo["temperature"].replace("degrees C", "°C")
+                    value: !!systemInfo["temperature"] ? systemInfo["temperature"].replace("degrees C", "°C") : ""
                 }
                 InfoItem {
                     title: i18n.tr("Warning level")
