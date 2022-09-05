@@ -27,15 +27,14 @@ def get_props():
     props = {}
     if os.path.exists("/system/build.prop"):
         output = cmd("getprop")
-        if output == "N/A":
-            return props
+        if output == "N/A": return props
 
-        columns = [[re.search(r"\[(.*)\]", i).group(1)
-                    for i in line.split(": ")] for line in output.splitlines()]
+        # columns = [[re.search(r"\[(.*)\]", i).group(1) for i in line.split(": ")] for line in output.splitlines()]
+        columns = [i.split(": ") for i in output.replace("[", '').replace(']', '').splitlines()]
         for row in columns:
-            if len(row) != 2:
-                continue
+            if len(row) != 2: continue
             props[row[0]] = row[1]
+
     return props
 
 def system_image():
