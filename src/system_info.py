@@ -117,12 +117,7 @@ def nm_wifi():
       "freq": freq,
       "security": security,
     }
-
   return parsed
-
-# `nmcli device show`
-# def nm_device_show():
-#   pass
 
 # Utils
 
@@ -318,8 +313,7 @@ def getNetwork():
   else:
     current_wifi = wifi_data.get(next(iter(wifi_data)))
 
-  # TODO: I don't entirely know how it works. Replace this hack with `nm_device_show()`
-  nameservers = cmd_shell("( nmcli -f IP4.DNS,IP6.DNS dev list || nmcli -f IP4.DNS,IP6.DNS dev show ) 2>/dev/null | awk '/DNS/{print$NF}'").splitlines()
+  nameservers = re.findall(r"DNS\[[1-2]\]:\s+(.+)", cmd("nmcli dev show"))
 
   try:
     global_ip = requests.get("https://ipaddress.sh/").text.strip()
