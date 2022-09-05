@@ -15,28 +15,28 @@
 '''
 
 import platform
-import subprocess
 import psutil
+import subprocess
 import os
 import re
 import requests
 
-# Try except in getting the props is useless, since the system mounted by halium can be only accessed by privileged users
+# Parsers
+
 def get_props():
   props = {}
   if os.path.exists("/system/build.prop"):
     output = cmd("getprop")
-    if output == "N/A": return {}
+    if output == "N/A": return props
 
     columns = [[re.search(r"\[(.*)\]", i).group(1) for i in line.split(": ")] for line in output.splitlines()]
     for row in columns:
       if len(row) != 2: continue
       props[row[0]] = row[1]
-  else:
-    return {}
   return props
 
-# TODO: Add a placeholder for non-existant values
+# TODO: You could build a unified nm funtion for parsing nmcli outouts
+
 def system_image():
   output = cmd("/usr/bin/system-image-cli -i").splitlines()
   fields = {}
@@ -46,11 +46,37 @@ def system_image():
     fields[row[0].replace(" ", "_")] = row[1]
   return fields
 
-def nm_interfaces():
-  interfaces = cmd("nmcli -t -f DEVICE,TYPE,STATE device status")
-  if "N/A" in interfaces: return {}
+def get_cpuinfo():
+  cpu_arch = platform.processor()
 
+  with open('/proc/cpuinfo', mode='r', newline='\n') as cpu_info_file:
+    cpu_info = cpu_info_file.read()
+
+    # psutil.cpu_count() Doesn't count all cores
+    cpu_count = len(re.findall(r"processor", cpu_info))
+
+    cpu_name = None
+    for match in re.finditer(r"^(model name|Hardware|Processor|cpu model|chip type|cpu type)\s*: (.*)", cpu_info, re.MULTILINE):
+      cpu_name = match.group(2)
+      if match.group(1) == "Hardware": break
+
+    cpu_min_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq")
+    cpu_max_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq")
+
+    return {
+      "name": cpu_name,
+      "count": cpu_count,
+      "arch": cpu_arch,
+      "max_freq": cpu_max_freq,
+      "min_freq": cpu_min_freq,
+    }
+
+def nm_interfaces():
   parsed = {}
+
+  interfaces = cmd("nmcli -t -f DEVICE,TYPE,STATE device status")
+  if "N/A" in interfaces: return parsed
+
   for data in interfaces.splitlines():
     data = data.split(":")
     name = list_get(data, 0)
@@ -67,10 +93,11 @@ def nm_interfaces():
   return parsed
 
 def nm_wifi():
-  interfaces = cmd("nmcli -t -f BSSID,ACTIVE,SSID,SIGNAL,RATE,FREQ,SECURITY dev wifi")
-  if interfaces == "N/A": return {}
-
   parsed = {}
+
+  interfaces = cmd("nmcli -t -f BSSID,ACTIVE,SSID,SIGNAL,RATE,FREQ,SECURITY dev wifi")
+  if interfaces == "N/A": return parsed
+
   for data in interfaces.splitlines():
     data = re.split(r'(?<!\\):', data)
 
@@ -93,15 +120,28 @@ def nm_wifi():
 
   return parsed
 
-def cmd(command, shell=False):
+# `nmcli device show`
+# def nm_device_show():
+#   pass
+
+# Utils
+
+def cmd(command, useShell=False):
   try:
-    result = subprocess.run(command.split(" "), shell=shell, stdout=subprocess.PIPE)
+    result = subprocess.run(command.split(" "), shell=False, stdout=subprocess.PIPE)
   except FileNotFoundError:
     return "N/A"
   if result.returncode != 0:
     return "N/A"
   else:
     return result.stdout.decode("utf-8").strip()
+
+def cmd_shell(command):
+  result = subprocess.getstatusoutput(command)
+  if result[0] != 0:
+    return "N/A"
+  else:
+    return result[1]
 
 def cat(path):
   try:
@@ -115,6 +155,8 @@ def list_get(list, index, fallback="N/A"):
     return list[index]
   else:
     return fallback
+
+# Categories
 
 def getSystem():
   uname = platform.uname()
@@ -193,7 +235,6 @@ def getLoadedModules():
       "name": name,
       "version": version
     })
-
   return response
 
 def getDevice():
@@ -209,9 +250,9 @@ def getDevice():
     manufacturer = cat("/sys/devices/virtual/dmi/id/sys_vendor")
     code_name = None
 
-  # Display and Camera arselect start,end,processId,threadId from {} where correlationIde handled through their respective QML types
+  # Display and Camera are handled through their respective QML types
 
-  # Other (Fingerprint, etc)
+  # TODO: (Fingerprint, etc)
 
   return {
     "basics": {
@@ -224,34 +265,17 @@ def getDevice():
 
 def getHardware():
   # CPU
-  cpu_arch = platform.processor()
-
-  # cpu_count = psutil.cpu_count() # This seems broken...
-  cpu_count = subprocess.getstatusoutput("grep -c ^processor /proc/cpuinfo")[1]
-  # FIXME: Add a funtion to parse this file! Remove these hacks!
-
-  cpu_max_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq")
-  cpu_min_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq")
-
-  cpu_name = subprocess.getstatusoutput("""awk -F '\\s*: | @' \
-    '/model name|Hardware|Processor|^cpu model|chip type|^cpu type/ {
-    cpu=$2; if ($1 == "Hardware") exit } END { print cpu }' /proc/cpuinfo""")[1] # FIXME: This may crash.
-
+  cpu_info = get_cpuinfo()
+  # The rest is dynamic info handled in `getUsage`
   return {
-    "cpu": {
-      "name": cpu_name,
-      "count": cpu_count,
-      "arch": cpu_arch,
-      "max_freq": cpu_max_freq,
-      "min_freq": cpu_min_freq,
-    }
+    "cpu": cpu_info
   }
 
 def getUsage():
   # CPU
   cpu_percent = psutil.cpu_percent()
   cpu_governor = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
-  cpu_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")
+  cpu_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq") # That's not the avarage...
 
   # There is a file descriptor for actual avarage frequency between cores,
   # but you don't have permission to read it as a normal user.
@@ -281,27 +305,21 @@ def getUsage():
   }
 
 def getNetwork():
-  # ifconfig = psutil.net_if_addrs()
-  # local_ips = cmd("hostname -I").split(" ")
+  # FIXME: Some envirements, like the Clickable container, may not have `NetworkManager`
 
-  # You could build a unified nm funtion for parsing nmcli outouts
-  # Also some devices may not have nmcli
-
-  current_interface = subprocess.getstatusoutput("ip route get 1.1.1.1 | grep -oP 'dev\s+\K[^ ]+'")[1]
-  current_ip = subprocess.getstatusoutput(
-    "ip addr show {interface} | grep 'inet ' | cut -d '/' -f1 | cut -d ' ' -f6"
+  current_interface = cmd_shell(r"ip route get 1.1.1.1 | grep -oP 'dev\s+\K[^ ]+'")
+  current_ip = cmd_shell(
+    r"ip addr show {interface} | grep -Po 'inet \K[\d.]+'"
     .format(interface = current_interface)
-  )[1]
-
-  # FIXME: This may crash!
+  )
 
   wifi_data = nm_wifi()
   if wifi_data == {}: current_wifi = {}
   else:
     current_wifi = wifi_data.get(next(iter(wifi_data)))
 
-  nameservers = subprocess.getstatusoutput("( nmcli -f IP4.DNS,IP6.DNS dev list || nmcli -f IP4.DNS,IP6.DNS dev show ) 2>/dev/null | awk '/DNS/{print$NF}'")[1].splitlines()
-  # FIXME: This may crash!
+  # TODO: I don't entirely know how it works. Replace this hack with `nm_device_show()`
+  nameservers = cmd_shell("( nmcli -f IP4.DNS,IP6.DNS dev list || nmcli -f IP4.DNS,IP6.DNS dev show ) 2>/dev/null | awk '/DNS/{print$NF}'").splitlines()
 
   try:
     global_ip = requests.get("https://ipaddress.sh/").text.strip()
@@ -318,19 +336,19 @@ def getNetwork():
   }
 
 def getBattery():
-    output = cmd("upower -i /org/freedesktop/UPower/devices/battery_battery")
-    infoDict = {}
+  output = cmd("upower -i /org/freedesktop/UPower/devices/battery_battery")
+  infoDict = {}
 
-    for line in output.splitlines():
-        fields = line.split(": ")
-        fields = [i.strip() for i in fields]
-        if len(fields) is not 2: continue
-        fields[0] = fields[0].replace(" ", "-")
-        fields[1] = fields[1].replace("'", '')
-        if ("yes" or "no") in fields[1]: fields[1] = "yes" in fields[1]
-        infoDict[fields[0]] = fields[1]
+  for line in output.splitlines():
+    fields = line.split(": ")
+    fields = [i.strip() for i in fields]
+    if len(fields) != 2: continue
+    fields[0] = fields[0].replace(" ", "-")
+    fields[1] = fields[1].replace("'", '')
+    if ("yes" or "no") in fields[1]: fields[1] = "yes" in fields[1]
+    infoDict[fields[0]] = fields[1]
 
     # TODO: Read additional info from file descriptors and merge the info (prioritizing upower)
     # TODO: Consider attempting to estimate current battery capacity by looking through upower charge history
 
-    return infoDict
+  return infoDict

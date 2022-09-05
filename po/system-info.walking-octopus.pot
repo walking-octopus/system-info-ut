@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-04 16:27+0000\n"
+"POT-Creation-Date: 2022-09-05 14:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,31 +50,31 @@ msgstr ""
 msgid "State"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:93
+#: ../qml/Pages/Categories/Battery.qml:94
 msgid "Time to empty"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:99
+#: ../qml/Pages/Categories/Battery.qml:100
 msgid "Health"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:102
+#: ../qml/Pages/Categories/Battery.qml:103
 msgid "Temperature"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:106
+#: ../qml/Pages/Categories/Battery.qml:107
 msgid "Warning level"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:110
+#: ../qml/Pages/Categories/Battery.qml:111
 msgid "Voltage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:117
+#: ../qml/Pages/Categories/Battery.qml:118
 msgid "Other"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:120
+#: ../qml/Pages/Categories/Battery.qml:121
 msgid "Technology"
 msgstr ""
 
