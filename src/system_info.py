@@ -21,6 +21,7 @@ import os
 import re
 import requests
 
+# Try except in getting the props is useless, since the system mounted by halium can be only accessed by privileged users
 def get_props():
   props = {}
   try:
