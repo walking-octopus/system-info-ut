@@ -1,0 +1,407 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the system-info.walking-octopus package.
+#
+# Heimen Stoffels <vistausss@fastmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: system-info.walking-octopus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-05 15:13+0000\n"
+"PO-Revision-Date: 2022-09-05 19:57+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: ../qml/Components/Backend.qml:28
+msgid "Critical error. View the logs for more info."
+msgstr "Er is een ernstige fout opgetreden - bekijk het logboek."
+
+#: ../qml/Components/Formatter.js:2
+msgid "Empty"
+msgstr "Blanco"
+
+#: ../qml/Components/Formatter.js:6
+msgid "Bytes"
+msgstr "Bytes"
+
+#: ../qml/Components/InfoItem.qml:12
+msgid "Copied!"
+msgstr "Gekopieerd!"
+
+#: ../qml/Pages/Categories/Battery.qml:30 ../qml/Pages/MainPage.qml:112
+msgid "Battery"
+msgstr "Accu"
+
+#: ../qml/Pages/Categories/Battery.qml:61 ../qml/Pages/Categories/Device.qml:60
+#: ../qml/Pages/Categories/Network.qml:63
+msgid "Basics"
+msgstr "Algemeen"
+
+#: ../qml/Pages/Categories/Battery.qml:65
+msgid "Charge"
+msgstr "Oplaadniveau"
+
+#: ../qml/Pages/Categories/Battery.qml:78
+msgid "State"
+msgstr "Status"
+
+#: ../qml/Pages/Categories/Battery.qml:94
+msgid "Time to empty"
+msgstr "Tijd tot ontladen"
+
+#: ../qml/Pages/Categories/Battery.qml:100
+msgid "Health"
+msgstr "Gezondheid"
+
+#: ../qml/Pages/Categories/Battery.qml:103
+msgid "Temperature"
+msgstr "Temperatuur"
+
+#: ../qml/Pages/Categories/Battery.qml:107
+msgid "Warning level"
+msgstr "Waarschuwingsniveau"
+
+#: ../qml/Pages/Categories/Battery.qml:111
+msgid "Voltage"
+msgstr "Voltage"
+
+#: ../qml/Pages/Categories/Battery.qml:118
+msgid "Other"
+msgstr "Overig"
+
+#: ../qml/Pages/Categories/Battery.qml:121
+msgid "Technology"
+msgstr "Technologie"
+
+#: ../qml/Pages/Categories/Device.qml:32 ../qml/Pages/MainPage.qml:77
+msgid "Device"
+msgstr "Apparaat"
+
+#: ../qml/Pages/Categories/Device.qml:64
+msgid "Model"
+msgstr "Model"
+
+#: ../qml/Pages/Categories/Device.qml:72 ../qml/Pages/Categories/Device.qml:125
+msgid "Manufacturer"
+msgstr "Fabrikant"
+
+#: ../qml/Pages/Categories/Device.qml:76
+msgid "Codename"
+msgstr "Codenaam"
+
+#: ../qml/Pages/Categories/Device.qml:81
+msgid "Display"
+msgstr "Scherm"
+
+#: ../qml/Pages/Categories/Device.qml:84 ../qml/Pages/Categories/Device.qml:134
+msgid "Name"
+msgstr "Naam"
+
+#: ../qml/Pages/Categories/Device.qml:89
+msgid "Resolution"
+msgstr "Resolutie"
+
+#: ../qml/Pages/Categories/Device.qml:94
+msgid "Aspect ratio"
+msgstr "Beeldverhouding"
+
+#: ../qml/Pages/Categories/Device.qml:107
+msgid "Density"
+msgstr "Dichtheid"
+
+#: ../qml/Pages/Categories/Device.qml:112
+#: ../qml/Pages/Categories/Device.qml:151
+msgid "Orientation"
+msgstr "Oriëntatie"
+
+#: ../qml/Pages/Categories/Device.qml:119
+#: ../qml/Pages/Categories/Device.qml:144
+msgid "Portrait"
+msgstr "Verticaal (portret)"
+
+#: ../qml/Pages/Categories/Device.qml:120
+#: ../qml/Pages/Categories/Device.qml:145
+msgid "Landscape"
+msgstr "Horizontaal (landschap)"
+
+#: ../qml/Pages/Categories/Device.qml:131
+msgid "Camera"
+msgstr "Camera"
+
+#: ../qml/Pages/Categories/Device.qml:140
+msgid "Position"
+msgstr "Positie"
+
+#: ../qml/Pages/Categories/Hardware.qml:50 ../qml/Pages/MainPage.qml:87
+msgid "Hardware"
+msgstr "Hardware"
+
+#: ../qml/Pages/Categories/Hardware.qml:78
+msgid "Usage"
+msgstr "Gebruik"
+
+#: ../qml/Pages/Categories/Hardware.qml:82
+msgid "CPU usage"
+msgstr "Cpu-gebruik"
+
+#: ../qml/Pages/Categories/Hardware.qml:98
+msgid "RAM usage"
+msgstr "Ram-gebruik"
+
+#: ../qml/Pages/Categories/Hardware.qml:119
+msgid "Disk usage"
+msgstr "Schijfgebruik"
+
+#: ../qml/Pages/Categories/Hardware.qml:141
+msgid "CPU Information"
+msgstr "Cpu-informatie"
+
+#: ../qml/Pages/Categories/Hardware.qml:145
+msgid "Processor"
+msgstr "Processor"
+
+#: ../qml/Pages/Categories/Hardware.qml:149
+msgid "Cores"
+msgstr "Aantal kernen"
+
+#: ../qml/Pages/Categories/Hardware.qml:150
+msgid " cores"
+msgstr " kernen"
+
+#: ../qml/Pages/Categories/Hardware.qml:153
+msgid "Max Frequency"
+msgstr "Max. frequentie"
+
+#: ../qml/Pages/Categories/Hardware.qml:157
+msgid "Min Frequency"
+msgstr "Min. frequentie"
+
+#: ../qml/Pages/Categories/Hardware.qml:161
+#: ../qml/Pages/Categories/System.qml:95
+msgid "Architecture"
+msgstr "Architectuur"
+
+#: ../qml/Pages/Categories/Hardware.qml:165
+msgid "Governor"
+msgstr "Governor"
+
+#: ../qml/Pages/Categories/LoadedModules.qml:41
+msgid "Loaded modules (%1)"
+msgstr "Geladen modules (%1)"
+
+#: ../qml/Pages/Categories/Network.qml:35 ../qml/Pages/MainPage.qml:102
+msgid "Network"
+msgstr "Netwerk"
+
+#: ../qml/Pages/Categories/Network.qml:67
+msgid "Local IP"
+msgstr "Lokaal ip-adres"
+
+#: ../qml/Pages/Categories/Network.qml:71
+msgid "Current interface"
+msgstr "Huidige interface"
+
+#: ../qml/Pages/Categories/Network.qml:84
+msgid "Global IP"
+msgstr "Globaal ip-adres"
+
+#: ../qml/Pages/Categories/Network.qml:85
+msgid "Offline"
+msgstr "Offline"
+
+#: ../qml/Pages/Categories/Network.qml:88
+msgid "DNS"
+msgstr "DNS"
+
+#: ../qml/Pages/Categories/Network.qml:93
+msgid "WiFi"
+msgstr "Wifi"
+
+#: ../qml/Pages/Categories/Network.qml:96
+msgid "SSID"
+msgstr "SSID"
+
+#: ../qml/Pages/Categories/Network.qml:100
+msgid "Signal strength"
+msgstr "Signaalsterkte"
+
+#: ../qml/Pages/Categories/Network.qml:105
+msgid "Freqency"
+msgstr "Frequentie"
+
+#: ../qml/Pages/Categories/Network.qml:110
+msgid "Link speed"
+msgstr "Linksnelheid"
+
+#: ../qml/Pages/Categories/Network.qml:114
+msgid "Security"
+msgstr "Beveiliging"
+
+#: ../qml/Pages/Categories/Network.qml:120
+msgid "Interfaces"
+msgstr "Interfaces"
+
+#: ../qml/Pages/Categories/Network.qml:123
+msgid "Names"
+msgstr "Namen"
+
+#: ../qml/Pages/Categories/Network.qml:127
+msgid "Types"
+msgstr "Types"
+
+#: ../qml/Pages/Categories/Network.qml:133
+msgid "Status"
+msgstr "Status"
+
+#: ../qml/Pages/Categories/Network.qml:135
+msgid "Connected"
+msgstr "Verbonden"
+
+#: ../qml/Pages/Categories/Network.qml:135
+msgid "Inactive"
+msgstr "Inactief"
+
+#: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:67
+msgid "System"
+msgstr "Systeem"
+
+#: ../qml/Pages/Categories/System.qml:62
+msgid "OS"
+msgstr "Besturingssysteem"
+
+#: ../qml/Pages/Categories/System.qml:67
+msgid "OTA version"
+msgstr "OTA-versie"
+
+#: ../qml/Pages/Categories/System.qml:68
+msgid "System version"
+msgstr "Systeemversie"
+
+#: ../qml/Pages/Categories/System.qml:75
+msgid "Update channel"
+msgstr "Updatekanaal"
+
+#: ../qml/Pages/Categories/System.qml:79
+msgid "Last update"
+msgstr "Recentste update"
+
+#: ../qml/Pages/Categories/System.qml:83
+msgid "Ubuntu version"
+msgstr "Ubuntu-versie"
+
+#: ../qml/Pages/Categories/System.qml:87
+msgid "Kernel version"
+msgstr "Kernelversie"
+
+#: ../qml/Pages/Categories/System.qml:99
+msgid "Root file-system status"
+msgstr "Schrijfstatus van bestandssysteem"
+
+#: ../qml/Pages/Categories/System.qml:100
+msgid "Locked"
+msgstr "Vergrendeld"
+
+#: ../qml/Pages/Categories/System.qml:100
+msgid "Unlocked"
+msgstr "Ontgrendeld"
+
+#: ../qml/Pages/Categories/System.qml:103
+msgid "Hostname"
+msgstr "Hostnaam"
+
+#: ../qml/Pages/Categories/System.qml:107
+msgid "Uptime"
+msgstr "Uptime"
+
+#: ../qml/Pages/Categories/System.qml:128
+msgid "AppArmor status"
+msgstr "AppArmor-status"
+
+#: ../qml/Pages/Categories/System.qml:129
+#: ../qml/Pages/Categories/System.qml:158
+#: ../qml/Pages/Categories/System.qml:162
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: ../qml/Pages/Categories/System.qml:129
+#: ../qml/Pages/Categories/System.qml:158
+#: ../qml/Pages/Categories/System.qml:162
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: ../qml/Pages/Categories/System.qml:138
+msgid "View loaded modules"
+msgstr "Geladen modules tonen"
+
+#: ../qml/Pages/Categories/System.qml:139
+msgid "This may help troubleshoot device issues."
+msgstr "Dit kan helpen om apparaatproblemen op te lossen."
+
+#: ../qml/Pages/Categories/System.qml:153
+msgid "Preferences"
+msgstr "Instellingen"
+
+#: ../qml/Pages/Categories/System.qml:157
+msgid "SSH (Remote control) status"
+msgstr "SSH-status (toegang op afstand)"
+
+#: ../qml/Pages/Categories/System.qml:161
+msgid "ADB (Developer mode) status"
+msgstr "Adb-status (ontwikkelaarsmodus)"
+
+#: ../qml/Pages/Categories/System.qml:165
+msgid "Language"
+msgstr "Taal"
+
+#: ../qml/Pages/Categories/System.qml:170
+msgid "Halium"
+msgstr "Halium"
+
+#: ../qml/Pages/Categories/System.qml:171
+msgid "Halium allows us run Linux on the devices with pre-installed Android."
+msgstr "Halium stelt Android-apparaten in staat om Linux te draaien."
+
+#: ../qml/Pages/Categories/System.qml:176
+msgid "Android subsystem version"
+msgstr "Android-subsysteemversie"
+
+#: ../qml/Pages/Categories/System.qml:180
+msgid "Android API level"
+msgstr "Android-api-niveau"
+
+#: ../qml/Pages/Categories/System.qml:184
+msgid "Security patch"
+msgstr "Beveiligingspatch"
+
+#: ../qml/Pages/Categories/System.qml:188
+msgid "Build fingerprint"
+msgstr "Controlesom van bouwsel"
+
+#: ../qml/Pages/Categories/System.qml:192
+msgid "Build date"
+msgstr "Bouwdatum"
+
+#: ../qml/Pages/Categories/System.qml:196
+msgid "Build ID"
+msgstr "Bouw-id"
+
+#: ../qml/Pages/Categories/System.qml:200
+msgid "Build tags"
+msgstr "Bouwtags"
+
+#: ../qml/Pages/Categories/System.qml:204
+msgid "Build type"
+msgstr "Bouwseltype"
+
+#: ../qml/Pages/MainPage.qml:30
+msgid "Collecting data..."
+msgstr "Bezig met verzamelen van gegevens…"
+
+#: ../qml/Pages/MainPage.qml:30 system-info.desktop.in.h:1
+msgid "Ubuntu Info"
+msgstr "Ubuntu-informatie"
