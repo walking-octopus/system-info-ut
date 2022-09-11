@@ -69,7 +69,7 @@ Page {
         ]
     }
 
-    // TODO: Maybe a new dialog warning users about killing a process would be 
+    // TODO: A dialog warning users about killing a process
 
     Component {
         id: sortPopup
