@@ -27,4 +27,11 @@ Python {
         print(`Python error: ${traceback}`);
         toast.show(i18n.tr("Critical error. View the logs for more info."));
     }
+
+    onReceived: function(errorIndex) {
+        let messageCodes = {
+            "AccessDenied": i18n.tr("Access denied.")
+        }
+        toast.show(messageCodes[errorIndex])
+    }
 }

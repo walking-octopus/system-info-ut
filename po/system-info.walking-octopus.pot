@@ -8,17 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-05 17:44+0000\n"
+"POT-Creation-Date: 2022-09-11 09:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../qml/Components/Backend.qml:28
 msgid "Critical error. View the logs for more info."
+msgstr ""
+
+#: ../qml/Components/Backend.qml:33
+msgid "Access denied."
 msgstr ""
 
 #: ../qml/Components/Formatter.js:2
@@ -33,48 +37,57 @@ msgstr ""
 msgid "Copied!"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:30 ../qml/Pages/MainPage.qml:112
+#: ../qml/Components/SearchHeader.qml:38
+msgid "Search with RegEx..."
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:31 ../qml/Pages/MainPage.qml:112
 msgid "Battery"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:61 ../qml/Pages/Categories/Device.qml:60
+#: ../qml/Pages/Categories/Battery.qml:60 ../qml/Pages/Categories/Device.qml:60
 #: ../qml/Pages/Categories/Network.qml:63
 msgid "Basics"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:65
+#: ../qml/Pages/Categories/Battery.qml:63
 msgid "Charge"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:78
+#: ../qml/Pages/Categories/Battery.qml:76
 msgid "State"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:94
+#: ../qml/Pages/Categories/Battery.qml:86
 msgid "Time to empty"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:100
+#: ../qml/Pages/Categories/Battery.qml:90
+msgid "Time to full"
+msgstr ""
+
+#: ../qml/Pages/Categories/Battery.qml:96
 msgid "Health"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:103
+#: ../qml/Pages/Categories/Battery.qml:99
+#: ../qml/Pages/Categories/Hardware.qml:174
 msgid "Temperature"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:107
+#: ../qml/Pages/Categories/Battery.qml:103
 msgid "Warning level"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:111
+#: ../qml/Pages/Categories/Battery.qml:107
 msgid "Voltage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:118
+#: ../qml/Pages/Categories/Battery.qml:114
 msgid "Other"
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:121
+#: ../qml/Pages/Categories/Battery.qml:117
 msgid "Technology"
 msgstr ""
 
@@ -146,10 +159,12 @@ msgid "Usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:82
+#: ../qml/Pages/Categories/TaskManager.qml:85
 msgid "CPU usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:98
+#: ../qml/Pages/Categories/TaskManager.qml:85
 msgid "RAM usage"
 msgstr ""
 
@@ -157,36 +172,49 @@ msgstr ""
 msgid "Disk usage"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:141
+#: ../qml/Pages/Categories/Hardware.qml:147
+#: ../qml/Pages/Categories/TaskManager.qml:58
+msgid "Task manager"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:148
+msgid "View and manage the currently running processes."
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:162
 msgid "CPU Information"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:145
+#: ../qml/Pages/Categories/Hardware.qml:166
 msgid "Processor"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:149
+#: ../qml/Pages/Categories/Hardware.qml:170
 msgid "Cores"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:150
+#: ../qml/Pages/Categories/Hardware.qml:171
 msgid " cores"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:153
+#: ../qml/Pages/Categories/Hardware.qml:175
+msgid "°C or m°C"
+msgstr ""
+
+#: ../qml/Pages/Categories/Hardware.qml:178
 msgid "Max Frequency"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:157
+#: ../qml/Pages/Categories/Hardware.qml:182
 msgid "Min Frequency"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:161
+#: ../qml/Pages/Categories/Hardware.qml:186
 #: ../qml/Pages/Categories/System.qml:95
 msgid "Architecture"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:165
+#: ../qml/Pages/Categories/Hardware.qml:190
 msgid "Governor"
 msgstr ""
 
@@ -396,6 +424,50 @@ msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:204
 msgid "Build type"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:80
+msgid "Sorting options"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:84
+msgid "Sort by"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:85
+msgid "Launch order (PID)"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:85
+msgid "Process name"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:90
+msgid "Order by"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:91
+msgid "Ascending"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:91
+msgid "Descending"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:96
+msgid "Save"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:122
+msgid "CPU"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:122
+msgid "RAM"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:130
+msgid "Killed process %1"
 msgstr ""
 
 #: ../qml/Pages/MainPage.qml:30

@@ -137,6 +137,27 @@ Page {
                     }
                 }
 
+                ListItem {                
+                    onClicked:
+                        pStack.push(Qt.resolvedUrl("./TaskManager.qml"));
+                
+                    ListItemLayout {
+                        anchors.centerIn: parent
+                        
+                        title.text: i18n.tr("Task manager")
+                        subtitle.text: i18n.tr("View and manage the currently running processes.")
+                    }
+                    
+                    // FIXME: For some reason, it doesn't align vertically
+                    ProgressionSlot {
+                        anchors {
+                            right: parent.right
+                            verticalCenter: parent.verticalCenter
+                            rightMargin: units.gu(2)
+                        }
+                    }
+                }
+
                 SectionDivider {
                     text: i18n.tr("CPU Information")
                 }
@@ -148,6 +169,10 @@ Page {
                 InfoItem {
                     title: i18n.tr("Cores")
                     value: systemInfo["cpu"]["count"] + i18n.tr(" cores")
+                }
+                InfoItem {
+                    title: i18n.tr("Temperature")
+                    value: usageInfo["cpu"]["temp"] + i18n.tr("°C or m°C")
                 }
                 InfoItem {
                     title: i18n.tr("Max Frequency")

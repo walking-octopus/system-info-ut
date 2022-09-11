@@ -20,6 +20,7 @@ import subprocess
 import os
 import re
 import requests
+import pyotherside
 
 # Parsers
 
@@ -75,7 +76,7 @@ def get_cpuinfo():
             "min_freq": cpu_min_freq,
         }
 
-# TODO: You could build a unified nm funtion for parsing nmcli outouts
+# TODO: You could build a unified nm function for parsing nmcli outputs
 
 def nm_interfaces():
     parsed = {}
@@ -89,8 +90,7 @@ def nm_interfaces():
         name = list_get(data, 0)
         type = list_get(data, 1)
         is_connected = "connected" in list_get(data, 2)
-        is_virtual = type in {"iptunnel",
-                              "loopback", "bridge", "dummy", "unknown"}
+        is_virtual = type in {"iptunnel", "loopback", "bridge", "dummy", "bond", "unknown"}
 
         if is_virtual:
             continue
@@ -281,14 +281,18 @@ def getUsage():
     # CPU
     cpu_percent = psutil.cpu_percent()
     cpu_governor = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
-    # That's not the avarage...
+    # That's not the average...
     cpu_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")
+    cpu_temp = cat("/sys/class/thermal/thermal_zone0/temp") #m°C
 
-    # There is a file descriptor for actual avarage frequency between cores,
+    # There is a file descriptor for actual average frequency between cores,
     # but you don't have permission to read it as a normal user.
 
     # RAM
     memory = psutil.virtual_memory()
+
+    # `memory.percent` gives some weird readings.
+    # See https://github.com/giampaolo/psutil/issues/685#issuecomment-202914057
 
     # Disk
     disk_usage = psutil.disk_usage("/home/")
@@ -297,6 +301,7 @@ def getUsage():
         "cpu": {
             "percent": cpu_percent,
             "freq": cpu_freq,
+            "temp": cpu_temp,
             "governor": cpu_governor
         },
         "ram": {
@@ -311,8 +316,41 @@ def getUsage():
         }
     }
 
+def getTaskManager(sorted_by_i, ordered_by, filter):
+    processes = []
+    for process in psutil.process_iter():
+        # if process.status() is 'idle': continue
+        memory_usage = process.memory_info().rss
+        cpu_usage = process.cpu_percent()
+        name = process.name()
+        pid = process.pid
+
+        processes.append({
+            "memory_usage": memory_usage,
+            "cpu_usage": cpu_usage,
+            "name": name,
+            "pid": pid
+        })
+
+    # sorted_by: 0: CPU; 1: RAM; 2: Name; 3: PID
+    # ordered_by: 0: Descending; 1: Ascending
+    sorted_by_values = ["cpu_usage", "memory_usage", "name", "pid"]
+    processes.sort(key=lambda x: x[sorted_by_values[sorted_by_i]], reverse=ordered_by == 0)
+
+    if filter != "":
+        pattern = re.compile(filter, re.IGNORECASE)
+        processes = [x for x in processes if pattern.match(x["name"])]
+
+    return processes
+
+def killProcess(pid):
+    try:
+        psutil.Process(int(pid)).kill()
+    except psutil.AccessDenied:
+        pyotherside.send("AccessDenied")
+
 def getNetwork():
-    # FIXME: Some envirements, like the Clickable container, may not have `NetworkManager`
+    # FIXME: Some environments, like the Clickable container, may not have `NetworkManager`
 
     current_interface = cmd_shell(
         r"ip route get 1.1.1.1 | grep -oP 'dev\s+\K[^ ]+'")
