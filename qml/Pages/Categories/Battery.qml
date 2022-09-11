@@ -17,6 +17,7 @@
 import QtQuick 2.12
 import Ubuntu.Components 1.3
 import "../../Components"
+import "../../Components/Formatter.js" as Formatter
 
 Page {
     anchors.fill: parent
@@ -54,12 +55,9 @@ Page {
                     top: parent.top
                 }
 
-                // A lot is missing, but it's a start.
-
                 // Current status and important info
                 SectionDivider {
                     text: i18n.tr("Basics")
-                    subtext: "WIP!"
                 }
                 InfoItem {
                     title: i18n.tr("Charge")
@@ -76,23 +74,21 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("State")
-                    value: {
-                        function capitalizeFirstLetter(string) {
-                            if (!string) return ""
-                            return string.charAt(0).toUpperCase() + string.slice(1);
-                        }
-                        capitalizeFirstLetter(systemInfo["state"])
-                    }
+                    value: Formatter.capitalizeFirstLetter(systemInfo["state"])
                 }
+                // I wasn't sure about the meaning of `energy-rate`, so I commented it out.
                 // InfoItem {
                 //     title: i18n.tr("Charging rate")
                 //     value: systemInfo["energy-rate"]
                 //     // TODO: Calculating the charging rate in percent per minute can be more understandable
-                //     // I wasn't sure about the meaning of `energy-rate`, so I commented it out.
                 // }
                 InfoItem {
                     title: i18n.tr("Time to empty")
                     value: systemInfo["time-to-empty"]
+                }
+                InfoItem {
+                    title: i18n.tr("Time to full")
+                    value: systemInfo["time-to-full"]
                 }
 
                 // Battery health
@@ -105,7 +101,7 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("Warning level")
-                    value: systemInfo["warning-level"]
+                    value: Formatter.capitalizeFirstLetter(systemInfo["warning-level"])
                 }
                 InfoItem {
                     title: i18n.tr("Voltage")
@@ -119,7 +115,7 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("Technology")
-                    value: systemInfo["technology"]
+                    value: Formatter.capitalizeFirstLetter(systemInfo["technology"])
                 }
             }
         }

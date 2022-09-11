@@ -9,3 +9,8 @@ function formatBytes(bytes, decimals = 2) {
 
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
+
+function capitalizeFirstLetter(string) {
+    if (!string) return ""
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
