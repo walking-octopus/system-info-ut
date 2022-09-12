@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-11 09:58+0000\n"
+"POT-Creation-Date: 2022-09-12 12:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../qml/Components/Backend.qml:28
@@ -159,12 +159,12 @@ msgid "Usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:82
-#: ../qml/Pages/Categories/TaskManager.qml:85
+#: ../qml/Pages/Categories/TaskManager.qml:86
 msgid "CPU usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:98
-#: ../qml/Pages/Categories/TaskManager.qml:85
+#: ../qml/Pages/Categories/TaskManager.qml:86
 msgid "RAM usage"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgid "Disk usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:147
-#: ../qml/Pages/Categories/TaskManager.qml:58
+#: ../qml/Pages/Categories/TaskManager.qml:59
 msgid "Task manager"
 msgstr ""
 
@@ -195,10 +195,6 @@ msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:171
 msgid " cores"
-msgstr ""
-
-#: ../qml/Pages/Categories/Hardware.qml:175
-msgid "°C or m°C"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:178
@@ -426,47 +422,51 @@ msgstr ""
 msgid "Build type"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:80
+#: ../qml/Pages/Categories/TaskManager.qml:81
 msgid "Sorting options"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:84
+#: ../qml/Pages/Categories/TaskManager.qml:85
 msgid "Sort by"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:85
+#: ../qml/Pages/Categories/TaskManager.qml:86
 msgid "Launch order (PID)"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:85
+#: ../qml/Pages/Categories/TaskManager.qml:86
 msgid "Process name"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:90
+#: ../qml/Pages/Categories/TaskManager.qml:91
 msgid "Order by"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:91
+#: ../qml/Pages/Categories/TaskManager.qml:92
 msgid "Ascending"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:91
+#: ../qml/Pages/Categories/TaskManager.qml:92
 msgid "Descending"
 msgstr ""
 
 #: ../qml/Pages/Categories/TaskManager.qml:96
+msgid "Update interval (seconds)"
+msgstr ""
+
+#: ../qml/Pages/Categories/TaskManager.qml:105
 msgid "Save"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:122
+#: ../qml/Pages/Categories/TaskManager.qml:132
 msgid "CPU"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:122
+#: ../qml/Pages/Categories/TaskManager.qml:132
 msgid "RAM"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:130
+#: ../qml/Pages/Categories/TaskManager.qml:140
 msgid "Killed process %1"
 msgstr ""
 

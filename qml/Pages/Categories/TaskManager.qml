@@ -25,6 +25,7 @@ Page {
     property int sorted_by: 0 // 0: CPU; 1: RAM; 2: Name; 3: PID
     property int ordered_by: 0 // 0: Descending; 1: Ascending
     property string filter: ""
+    property int updateInterval: 2000
 
     ListModel {
         id: processModel
@@ -42,7 +43,7 @@ Page {
     Timer {
         repeat: true; running: !view.movingVertically
         triggeredOnStart: true
-        interval: 2000
+        interval: updateInterval
     
         onTriggered: {
             processModel.reload()
@@ -92,12 +93,21 @@ Page {
                 selectedIndex: ordered_by
             }
 
+            Label { text: i18n.tr("Update interval (seconds)") }
+            Slider {
+                id: intervalSlider
+                function formatValue(v) { return v.toFixed(1) }
+                minimumValue: 0.5; maximumValue: 5
+                value: updateInterval / 1000
+            }
+
             Button {
                 text: i18n.tr("Save")
                 color: theme.palette.normal.positive
                 onClicked: {
                     sorted_by = sortBySelector.selectedIndex
                     ordered_by = orderSelector.selectedIndex
+                    updateInterval = intervalSlider.value * 1000
                     PopupUtils.close(sortDialog)
                 }
             }
