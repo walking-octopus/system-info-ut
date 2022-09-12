@@ -172,7 +172,7 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("Temperature")
-                    value: usageInfo["cpu"]["temp"] + i18n.tr("°C or m°C")
+                    value: usageInfo["cpu"]["temp"] + " °C"
                 }
                 InfoItem {
                     title: i18n.tr("Max Frequency")

@@ -90,10 +90,11 @@ def nm_interfaces():
         name = list_get(data, 0)
         type = list_get(data, 1)
         is_connected = "connected" in list_get(data, 2)
-        is_virtual = type in {"iptunnel", "loopback", "bridge", "dummy", "bond", "unknown"}
 
+        is_virtual = not type in {"gsm", "wifi", "ethernet"}
         if is_virtual:
             continue
+
         parsed[name] = {
             "type": type,
             "is_connected": is_connected
@@ -283,7 +284,10 @@ def getUsage():
     cpu_governor = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor")
     # That's not the average...
     cpu_freq = cat("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")
-    cpu_temp = cat("/sys/class/thermal/thermal_zone0/temp") #m°C
+
+    cpu_temp = cat("/sys/class/thermal/thermal_zone0/temp")
+    if cpu_temp is not None and float(cpu_temp) >= 1000:
+        cpu_temp = float(cpu_temp) / 1000
 
     # There is a file descriptor for actual average frequency between cores,
     # but you don't have permission to read it as a normal user.
