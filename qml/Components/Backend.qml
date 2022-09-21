@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import io.thp.pyotherside 1.4
+import Ubuntu.Components 1.3
 
 Python {
     id: python
@@ -14,6 +15,16 @@ Python {
         python.call(pythonFunction, [], function(systemInfo) {
             python.isLoading = false;
             pStack.push(Qt.resolvedUrl(categoryPage), { "systemInfo": systemInfo });
+        });
+    }
+
+    function generateReport() {
+        python.isLoading = true;
+
+        python.call("system_info.generateReport", [Qt.application.version], function(report) {
+            python.isLoading = false;
+            Clipboard.push(report);
+            toast.show(i18n.tr("Copied a full system info report."))
         });
     }
 

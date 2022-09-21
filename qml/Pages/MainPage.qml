@@ -28,6 +28,15 @@ Page {
     header: PageHeader {
         id: header
         title: python.isLoading ? i18n.tr("Collecting data...") : i18n.tr('Ubuntu Info')
+
+        // TODO: Add a dialog to choose what info to export
+        // TODO: Use ContentHub to export the report
+
+        trailingActionBar.actions: Action {
+            // iconName: "import"
+            iconSource: "../../assets/export.svg"
+            onTriggered: python.generateReport()
+        }
         
         ProgressBar {
             indeterminate: true

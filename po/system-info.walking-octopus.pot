@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-12 12:45+0000\n"
+"POT-Creation-Date: 2022-09-21 10:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Components/Backend.qml:28
+#: ../qml/Components/Backend.qml:27
+msgid "Copied a full system info report."
+msgstr ""
+
+#: ../qml/Components/Backend.qml:39
 msgid "Critical error. View the logs for more info."
 msgstr ""
 
-#: ../qml/Components/Backend.qml:33
+#: ../qml/Components/Backend.qml:44
 msgid "Access denied."
 msgstr ""
 
@@ -41,7 +45,7 @@ msgstr ""
 msgid "Search with RegEx..."
 msgstr ""
 
-#: ../qml/Pages/Categories/Battery.qml:31 ../qml/Pages/MainPage.qml:112
+#: ../qml/Pages/Categories/Battery.qml:31 ../qml/Pages/MainPage.qml:121
 msgid "Battery"
 msgstr ""
 
@@ -91,7 +95,7 @@ msgstr ""
 msgid "Technology"
 msgstr ""
 
-#: ../qml/Pages/Categories/Device.qml:32 ../qml/Pages/MainPage.qml:77
+#: ../qml/Pages/Categories/Device.qml:32 ../qml/Pages/MainPage.qml:86
 msgid "Device"
 msgstr ""
 
@@ -150,7 +154,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: ../qml/Pages/Categories/Hardware.qml:50 ../qml/Pages/MainPage.qml:87
+#: ../qml/Pages/Categories/Hardware.qml:50 ../qml/Pages/MainPage.qml:96
 msgid "Hardware"
 msgstr ""
 
@@ -218,7 +222,7 @@ msgstr ""
 msgid "Loaded modules (%1)"
 msgstr ""
 
-#: ../qml/Pages/Categories/Network.qml:35 ../qml/Pages/MainPage.qml:102
+#: ../qml/Pages/Categories/Network.qml:35 ../qml/Pages/MainPage.qml:111
 msgid "Network"
 msgstr ""
 
@@ -290,7 +294,7 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:67
+#: ../qml/Pages/Categories/System.qml:31 ../qml/Pages/MainPage.qml:76
 msgid "System"
 msgstr ""
 

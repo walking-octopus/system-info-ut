@@ -14,12 +14,9 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
-import platform
-import psutil
-import subprocess
-import os
-import re
-import requests
+import platform, psutil, subprocess
+import re, os, requests
+import json, yaml
 import pyotherside
 
 # Parsers
@@ -404,3 +401,20 @@ def getBattery():
         # TODO: Consider attempting to estimate current battery capacity by looking through upower charge history
 
     return infoDict
+
+def generateReport(appVersion):
+    # format = "txt" | "json" | "yaml"
+    data = {
+        "version": appVersion,
+        "categories": {
+            "system": {
+                "os": getSystem(),
+                "loaded_modules": getLoadedModules()
+            },
+            "device": getDevice(),
+            "network": getNetwork(),
+            "battery": getBattery()
+        }
+    }
+    
+    return yaml.dump(data)
