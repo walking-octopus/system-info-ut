@@ -307,7 +307,7 @@ def getUsage():
         },
         "ram": {
             "percent": memory.percent,
-            "usage": memory.used,
+            "usage": (memory.percent * memory.total) / 100, #memory.used,
             "total": memory.total
         },
         "disk": {
