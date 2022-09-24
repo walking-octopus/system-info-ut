@@ -417,4 +417,4 @@ def generateReport(appVersion):
         }
     }
     
-    return yaml.dump(data)
+    return yaml.dump(data, default_flow_style=False)
