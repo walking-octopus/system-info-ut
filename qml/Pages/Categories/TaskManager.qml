@@ -32,6 +32,7 @@ Page {
 
         function reload() {
             python.call('system_info.getTaskManager', [sorted_by, ordered_by, filter], function(processes) {
+                if (!processModel) return
                 processModel.clear();
                 processes.forEach((i) => append(i));
             });

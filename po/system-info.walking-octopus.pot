@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 10:14+0000\n"
+"POT-Creation-Date: 2022-09-24 16:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,12 +163,12 @@ msgid "Usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:82
-#: ../qml/Pages/Categories/TaskManager.qml:86
+#: ../qml/Pages/Categories/TaskManager.qml:87
 msgid "CPU usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:98
-#: ../qml/Pages/Categories/TaskManager.qml:86
+#: ../qml/Pages/Categories/TaskManager.qml:87
 msgid "RAM usage"
 msgstr ""
 
@@ -177,7 +177,7 @@ msgid "Disk usage"
 msgstr ""
 
 #: ../qml/Pages/Categories/Hardware.qml:147
-#: ../qml/Pages/Categories/TaskManager.qml:59
+#: ../qml/Pages/Categories/TaskManager.qml:60
 msgid "Task manager"
 msgstr ""
 
@@ -426,51 +426,51 @@ msgstr ""
 msgid "Build type"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:81
+#: ../qml/Pages/Categories/TaskManager.qml:82
 msgid "Sorting options"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:85
+#: ../qml/Pages/Categories/TaskManager.qml:86
 msgid "Sort by"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:86
+#: ../qml/Pages/Categories/TaskManager.qml:87
 msgid "Launch order (PID)"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:86
+#: ../qml/Pages/Categories/TaskManager.qml:87
 msgid "Process name"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:91
+#: ../qml/Pages/Categories/TaskManager.qml:92
 msgid "Order by"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:92
+#: ../qml/Pages/Categories/TaskManager.qml:93
 msgid "Ascending"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:92
+#: ../qml/Pages/Categories/TaskManager.qml:93
 msgid "Descending"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:96
+#: ../qml/Pages/Categories/TaskManager.qml:97
 msgid "Update interval (seconds)"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:105
+#: ../qml/Pages/Categories/TaskManager.qml:106
 msgid "Save"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:132
+#: ../qml/Pages/Categories/TaskManager.qml:133
 msgid "CPU"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:132
+#: ../qml/Pages/Categories/TaskManager.qml:133
 msgid "RAM"
 msgstr ""
 
-#: ../qml/Pages/Categories/TaskManager.qml:140
+#: ../qml/Pages/Categories/TaskManager.qml:141
 msgid "Killed process %1"
 msgstr ""
 
