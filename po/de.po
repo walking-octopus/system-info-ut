@@ -159,7 +159,7 @@ msgstr "Speichernutzung"
 
 #: ../qml/Pages/Categories/Hardware.qml:141
 msgid "CPU Information"
-msgstr "CPU-Information
+msgstr "CPU-Information"
 
 #: ../qml/Pages/Categories/Hardware.qml:145
 msgid "Processor"
