@@ -368,7 +368,7 @@ msgstr "Halium ermöglicht das Ausführen von Linux auf Systemen mit vorinstalli
 
 #: ../qml/Pages/Categories/System.qml:176
 msgid "Android subsystem version"
-msgstr "Android-Subsystem-Version
+msgstr "Android-Subsystem-Version"
 
 #: ../qml/Pages/Categories/System.qml:180
 msgid "Android API level"
