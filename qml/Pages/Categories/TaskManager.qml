@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.12
+import Qt.labs.settings 1.0
 import QtQuick.Layouts 1.3
 import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
@@ -22,8 +23,12 @@ import "../../Components/Formatter.js" as Format
 import "../../Components"
 
 Page {
-    property int sorted_by: 0 // 0: CPU; 1: RAM; 2: Name; 3: PID
-    property int ordered_by: 0 // 0: Descending; 1: Ascending
+    Settings {
+        id: config
+        category: "TaskManager"
+        property int sorted_by: 0 // 0: CPU; 1: RAM; 2: Name; 3: PID
+        property int ordered_by: 0 // 0: Descending; 1: Ascending
+    }
     property string filter: ""
     property int updateInterval: 2000
 
@@ -31,7 +36,7 @@ Page {
         id: processModel
 
         function reload() {
-            python.call('system_info.getTaskManager', [sorted_by, ordered_by, filter], function(processes) {
+            python.call('system_info.getTaskManager', [config.sorted_by, config.ordered_by, filter], function(processes) {
                 if (!processModel) return
                 processModel.clear();
                 processes.forEach((i) => append(i));
@@ -85,13 +90,13 @@ Page {
                 id: sortBySelector
                 text: i18n.tr("Sort by")
                 model: [i18n.tr('CPU usage'), i18n.tr('RAM usage'), i18n.tr('Process name'), i18n.tr('Launch order (PID)')]
-                selectedIndex: sorted_by
+                selectedIndex: config.sorted_by
             }
             OptionSelector {
                 id: orderSelector
                 text: i18n.tr("Order by")
                 model: [i18n.tr('Descending'), i18n.tr('Ascending')]
-                selectedIndex: ordered_by
+                selectedIndex: config.ordered_by
             }
 
             Label { text: i18n.tr("Update interval (seconds)") }
@@ -106,8 +111,8 @@ Page {
                 text: i18n.tr("Save")
                 color: theme.palette.normal.positive
                 onClicked: {
-                    sorted_by = sortBySelector.selectedIndex
-                    ordered_by = orderSelector.selectedIndex
+                    config.sorted_by = sortBySelector.selectedIndex
+                    config.ordered_by = orderSelector.selectedIndex
                     updateInterval = intervalSlider.value * 1000
                     PopupUtils.close(sortDialog)
                 }
