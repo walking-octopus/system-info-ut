@@ -9,7 +9,7 @@ _________________________________
 
 ## Features:
  - Beautiful design: Endless lists of poorly labeled items are out of fashion! Quickly find what you're looking for in this modern app.
- - Forever free: No need let shady black boxes roam free on your device. This app is free and open-source forever.
+ - Forever free: No to need let shady black boxes roam free on your device. This app is free and open-source forever.
  - Community-built: Miss something? Just fill out an issue or submit a merge request and it will be added in no time!
 
 ## Building 
