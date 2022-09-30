@@ -251,7 +251,7 @@ def getDevice():
         model = build_props.get("ro.product.model")
         brand = build_props.get("ro.product.brand")
         manufacturer = build_props.get("ro.product.manufacturer")
-        code_name = build_props.get("ro.cm.device")
+        code_name = build_props.get("ro.build.product")
     else:
         model = cat("/sys/devices/virtual/dmi/id/product_name")
         brand = cat("/sys/devices/virtual/dmi/id/product_family")
