@@ -3,13 +3,13 @@
 # Ubuntu Info
 
 A beautiful system info app for Ubuntu Touch.
-_____________________________________________
+_________________________________
 
 <img src="https://open-store.io/screenshots/system-info.walking-octopus-screenshot-4ff4fa94-9a16-4ad4-9e1a-ee12fd8618ce.png" alt="Screenshot" width="200" />
 
 ## Features:
- - Beautiful design: Endless lists of poorly labeled items are out of fashion! Quickly find what you're searching for in this modern app.
- - Forever free: No need to allow shady black boxes on your device just to view conveniently view some info. This app is free and open-source forever.
+ - Beautiful design: Endless lists of poorly labeled items are out of fashion! Quickly find what you're looking for in this modern app.
+ - Forever free: No need let shady black boxes roam free on your device. This app is free and open-source forever.
  - Community-built: Miss something? Just fill out an issue or submit a merge request and it will be added in no time!
 
 ## Building 
