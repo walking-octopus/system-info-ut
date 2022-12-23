@@ -15,8 +15,9 @@
 '''
 
 import platform, psutil, subprocess
-import re, os, requests
+import re, os, requests, sys
 import json, yaml
+import time
 import pyotherside
 
 # Parsers
@@ -222,12 +223,17 @@ def getSystem():
         },
         # "device_codename": device_codename,
         "boot_time": boot_time,
+	"uptime": get_uptime(),
         "aa_loaded": aa_loaded,
         "fs_writable": fs_writable,
         "ssh_enabled": ssh_enabled,
         "adb_enabled": adb_enabled,
         "lang": lang,
     }
+
+def get_uptime():
+	time = cmd("uptime -p")
+	return time
 
 def getLoadedModules():
     modulesNames = os.listdir("/sys/module/")
@@ -251,7 +257,7 @@ def getDevice():
         model = build_props.get("ro.product.model")
         brand = build_props.get("ro.product.brand")
         manufacturer = build_props.get("ro.product.manufacturer")
-        code_name = build_props.get("ro.build.product")
+        code_name = build_props.get("ro.product.board")
     else:
         model = cat("/sys/devices/virtual/dmi/id/product_name")
         brand = cat("/sys/devices/virtual/dmi/id/product_family")
@@ -401,6 +407,53 @@ def getBattery():
         # TODO: Consider attempting to estimate current battery capacity by looking through upower charge history
 
     return infoDict
+
+def getWaydroidInfo():
+
+	waydroid_bin = os.path.isfile("/usr/bin/waydroid")
+	waydroid_config = "/var/lib/waydroid/waydroid.cfg"
+	waydroid_rootfs = "/var/lib/waydroid/rootfs"
+
+	waydroid_initialized = os.path.isfile(waydroid_config) and os.path.isdir(waydroid_rootfs)
+
+	if waydroid_bin:
+		waydroid_version = cmd("waydroid -V")
+		waydroid_installed = 1
+	else:
+		waydroid_version = "Waydroid not installed!"
+		waydroid_installed = 0
+
+	if waydroid_installed and waydroid_initialized:
+		sys.path.append('/usr/lib/waydroid')
+		import waydroid
+		class Args:
+			config = "/var/lib/waydroid/waydroid.cfg"
+		args = Args()
+
+		config = waydroid.tools.config.load(args)
+		system_ota_config = config["waydroid"]["system_ota"]
+		if 'VANILLA' in system_ota_config:
+			lineage_variant = "Vanilla"
+		elif 'GAPPS' in system_ota_config:
+			lineage_variant = "GApps"
+
+		waydroid_status = "Initialized"
+	else:
+		waydroid_status = "Uninitialized"
+		config = ""
+		lineage_variant = ""
+		system_ota_config = ""
+
+	lineage_version = "18.1 (this is a dummy value, hardcoded for now)"
+
+	return {
+		"waydroid_version": 	waydroid_version,
+		"waydroid_status":	waydroid_status,
+		"waydroid_installed":	waydroid_installed,
+		"lineage_version":	lineage_version,
+		"lineage_variant":	lineage_variant,
+		"system_ota_config":	system_ota_config
+	}
 
 def generateReport(appVersion):
     # format = "txt" | "json" | "yaml"
