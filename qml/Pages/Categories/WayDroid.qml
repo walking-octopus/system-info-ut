@@ -74,7 +74,7 @@ Page {
             Column {
                 id: lineage_layout
                 width: parent.width
-		visible: (systemInfo["waydroid_installed"]) ? true : false
+		visible: (systemInfo["waydroid_initialized"]) ? true : false
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     top: layout.bottom

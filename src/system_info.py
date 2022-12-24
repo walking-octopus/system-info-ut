@@ -17,7 +17,7 @@
 import platform, psutil, subprocess
 import re, os, requests, sys
 import json, yaml
-import time
+import time, http.client as httplib
 import pyotherside
 
 # Parsers
@@ -459,7 +459,7 @@ def getWaydroidInfo():
 			if session_cfg["session"]["state"] == "RUNNING":
 				ota_version = waydroid.tools.helpers.props.get(args, "ro.lineage.display.version")
 
-		elif have_internet:
+		elif have_internet():
 			output = requests.get(system_ota_config).text
 			json_output = json.loads(output)
 			i = 0
