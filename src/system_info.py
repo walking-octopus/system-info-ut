@@ -408,48 +408,80 @@ def getBattery():
 
     return infoDict
 
+
+def have_internet() -> bool:
+    conn = httplib.HTTPSConnection("8.8.8.8", timeout=5)
+    try:
+        conn.request("HEAD", "/")
+        return True
+    except Exception:
+        return False
+    finally:
+        conn.close()
+
 def getWaydroidInfo():
 
 	waydroid_bin = os.path.isfile("/usr/bin/waydroid")
 	waydroid_config = "/var/lib/waydroid/waydroid.cfg"
 	waydroid_rootfs = "/var/lib/waydroid/rootfs"
+	config = ""
+	lineage_variant = ""
+	system_ota_config = ""
+	lineage_version = ""
+	ota_version = ""
 
 	waydroid_initialized = os.path.isfile(waydroid_config) and os.path.isdir(waydroid_rootfs)
 
 	if waydroid_bin:
 		waydroid_version = cmd("waydroid -V")
-		waydroid_installed = 1
+		waydroid_installed = True
 	else:
 		waydroid_version = "Waydroid not installed!"
-		waydroid_installed = 0
+		waydroid_installed = False
 
 	if waydroid_installed and waydroid_initialized:
 		sys.path.append('/usr/lib/waydroid')
 		import waydroid
 		class Args:
-			config = "/var/lib/waydroid/waydroid.cfg"
+			config = waydroid_config
 		args = Args()
 
 		config = waydroid.tools.config.load(args)
 		system_ota_config = config["waydroid"]["system_ota"]
+		system_ota_datetime = config["waydroid"]["system_datetime"]
 		if 'VANILLA' in system_ota_config:
 			lineage_variant = "Vanilla"
 		elif 'GAPPS' in system_ota_config:
 			lineage_variant = "GApps"
 
+		if os.path.exists(waydroid.tools.config.session_defaults["config_path"]):
+			session_cfg = waydroid.tools.config.load_session()
+			if session_cfg["session"]["state"] == "RUNNING":
+				ota_version = waydroid.tools.helpers.props.get(args, "ro.lineage.display.version")
+
+		elif have_internet:
+			output = requests.get(system_ota_config).text
+			json_output = json.loads(output)
+			i = 0
+			while i < len(json_output["response"]) - 1:
+				if str(json_output["response"][i]["datetime"]) == system_ota_datetime:
+					ota_version = json_output["response"][i]["filename"]
+				i += 1
+
+		if ota_version != "":
+			lineage_version = ota_version
+		else:
+			lineage_version = "Unable to get lineage version. Check logs"
+
 		waydroid_status = "Initialized"
 	else:
 		waydroid_status = "Uninitialized"
-		config = ""
-		lineage_variant = ""
-		system_ota_config = ""
-
-	lineage_version = "18.1 (this is a dummy value, hardcoded for now)"
 
 	return {
 		"waydroid_version": 	waydroid_version,
 		"waydroid_status":	waydroid_status,
 		"waydroid_installed":	waydroid_installed,
+		"waydroid_initialized":	waydroid_initialized,
 		"lineage_version":	lineage_version,
 		"lineage_variant":	lineage_variant,
 		"system_ota_config":	system_ota_config
