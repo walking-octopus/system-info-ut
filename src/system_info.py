@@ -424,9 +424,13 @@ def getWaydroidInfo():
 	waydroid_bin = os.path.isfile("/usr/bin/waydroid")
 	waydroid_config = "/var/lib/waydroid/waydroid.cfg"
 	waydroid_rootfs = "/var/lib/waydroid/rootfs"
+
+	# Empty vars, won't get displayed in QML side unless waydroid is initialized
 	config = ""
 	lineage_variant = ""
+	vendor_variant = ""
 	system_ota_config = ""
+	vendor_ota_config = ""
 	lineage_version = ""
 	ota_version = ""
 
@@ -436,7 +440,7 @@ def getWaydroidInfo():
 		waydroid_version = cmd("waydroid -V")
 		waydroid_installed = True
 	else:
-		waydroid_version = "Waydroid not installed!"
+		waydroid_version = "WayDroid not installed!"
 		waydroid_installed = False
 
 	if waydroid_installed and waydroid_initialized:
@@ -448,6 +452,8 @@ def getWaydroidInfo():
 
 		config = waydroid.tools.config.load(args)
 		system_ota_config = config["waydroid"]["system_ota"]
+		vendor_ota_config = config["waydroid"]["vendor_ota"]
+		vendor_variant = config["waydroid"]["vendor_type"]
 		system_ota_datetime = config["waydroid"]["system_datetime"]
 		if 'VANILLA' in system_ota_config:
 			lineage_variant = "Vanilla"
@@ -484,7 +490,9 @@ def getWaydroidInfo():
 		"waydroid_initialized":	waydroid_initialized,
 		"lineage_version":	lineage_version,
 		"lineage_variant":	lineage_variant,
-		"system_ota_config":	system_ota_config
+		"vendor_variant":	vendor_variant,
+		"system_ota_config":	system_ota_config,
+		"vendor_ota_config":	vendor_ota_config
 	}
 
 def generateReport(appVersion):

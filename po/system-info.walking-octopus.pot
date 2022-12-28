@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-26 11:20+0000\n"
+"POT-Creation-Date: 2022-12-28 07:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -497,7 +497,15 @@ msgid "Image Variant"
 msgstr ""
 
 #: ../qml/Pages/Categories/WayDroid.qml:98
+msgid "Vendor Variant"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:103
 msgid "System OTA link"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:108
+msgid "Vendor OTA link"
 msgstr ""
 
 #: ../qml/Pages/MainPage.qml:30

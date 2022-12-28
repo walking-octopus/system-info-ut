@@ -95,8 +95,18 @@ Page {
 		}
 
 		InfoItem {
+                    title: i18n.tr("Vendor Variant")
+                    value: systemInfo["vendor_variant"]
+		}
+
+		InfoItem {
 		    title: i18n.tr("System OTA link")
 		    value: systemInfo["system_ota_config"]
+		}
+
+		InfoItem {
+                    title: i18n.tr("Vendor OTA link")
+                    value: systemInfo["vendor_ota_config"]
 		}
             }
 	}
