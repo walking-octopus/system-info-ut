@@ -47,4 +47,5 @@ Please help our translation efforts by following [these instructions](https://gi
 ## License
  - The project is licensed under the [GPL-3.0](https://opensource.org/licenses/GPL-3.0).
  - The [CPU icon](https://thenounproject.com/icon/cpu-156717/) was made by Arthur Shlain from The Noun Project (CC).
+ - The WayDroid icon was made by @maciek134
  - The logo uses the `info` icon from Suru.
