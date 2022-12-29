@@ -129,6 +129,16 @@ Page {
                         python.loadCategory("../Pages/Categories/Battery.qml", "system_info.getBattery")
                 }
 
+		CategoryButton {
+		    title: i18n.tr("WayDroid")
+
+		    icon.source: "../../assets/waydroid.svg"
+		    colorIndex: 11
+
+		    onClicked:
+			python.loadCategory("../Pages/Categories/WayDroid.qml", "system_info.getWaydroidInfo")
+		}
+
                 // TODO: How about a Sensors category?
             }
         }

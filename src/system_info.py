@@ -15,8 +15,9 @@
 '''
 
 import platform, psutil, subprocess
-import re, os, requests
+import re, os, requests, sys
 import json, yaml
+import time, http.client as httplib
 import pyotherside
 
 # Parsers
@@ -222,12 +223,17 @@ def getSystem():
         },
         # "device_codename": device_codename,
         "boot_time": boot_time,
+	"uptime": get_uptime(),
         "aa_loaded": aa_loaded,
         "fs_writable": fs_writable,
         "ssh_enabled": ssh_enabled,
         "adb_enabled": adb_enabled,
         "lang": lang,
     }
+
+def get_uptime():
+	time = cmd("uptime -p")
+	return time
 
 def getLoadedModules():
     modulesNames = os.listdir("/sys/module/")
@@ -251,7 +257,7 @@ def getDevice():
         model = build_props.get("ro.product.model")
         brand = build_props.get("ro.product.brand")
         manufacturer = build_props.get("ro.product.manufacturer")
-        code_name = build_props.get("ro.build.product")
+        code_name = build_props.get("ro.product.board")
     else:
         model = cat("/sys/devices/virtual/dmi/id/product_name")
         brand = cat("/sys/devices/virtual/dmi/id/product_family")
@@ -401,6 +407,93 @@ def getBattery():
         # TODO: Consider attempting to estimate current battery capacity by looking through upower charge history
 
     return infoDict
+
+
+def have_internet() -> bool:
+    conn = httplib.HTTPSConnection("8.8.8.8", timeout=5)
+    try:
+        conn.request("HEAD", "/")
+        return True
+    except Exception:
+        return False
+    finally:
+        conn.close()
+
+def getWaydroidInfo():
+
+	waydroid_bin = os.path.isfile("/usr/bin/waydroid")
+	waydroid_config = "/var/lib/waydroid/waydroid.cfg"
+	waydroid_rootfs = "/var/lib/waydroid/rootfs"
+
+	# Empty vars, won't get displayed in QML side unless waydroid is initialized
+	config = ""
+	lineage_variant = ""
+	vendor_variant = ""
+	system_ota_config = ""
+	vendor_ota_config = ""
+	lineage_version = ""
+	ota_version = ""
+
+	waydroid_initialized = os.path.isfile(waydroid_config) and os.path.isdir(waydroid_rootfs)
+
+	if waydroid_bin:
+		waydroid_version = cmd("waydroid -V")
+		waydroid_installed = True
+	else:
+		waydroid_version = "WayDroid not installed!"
+		waydroid_installed = False
+
+	if waydroid_installed and waydroid_initialized:
+		sys.path.append('/usr/lib/waydroid')
+		import waydroid
+		class Args:
+			config = waydroid_config
+		args = Args()
+
+		config = waydroid.tools.config.load(args)
+		system_ota_config = config["waydroid"]["system_ota"]
+		vendor_ota_config = config["waydroid"]["vendor_ota"]
+		vendor_variant = config["waydroid"]["vendor_type"]
+		system_ota_datetime = config["waydroid"]["system_datetime"]
+		if 'VANILLA' in system_ota_config:
+			lineage_variant = "Vanilla"
+		elif 'GAPPS' in system_ota_config:
+			lineage_variant = "GApps"
+
+		if os.path.exists(waydroid.tools.config.session_defaults["config_path"]):
+			session_cfg = waydroid.tools.config.load_session()
+			if session_cfg["session"]["state"] == "RUNNING":
+				ota_version = waydroid.tools.helpers.props.get(args, "ro.lineage.display.version")
+
+		elif have_internet():
+			output = requests.get(system_ota_config).text
+			json_output = json.loads(output)
+			i = 0
+			while i < len(json_output["response"]) - 1:
+				if str(json_output["response"][i]["datetime"]) == system_ota_datetime:
+					ota_version = json_output["response"][i]["filename"]
+				i += 1
+
+		if ota_version != "":
+			lineage_version = ota_version
+		else:
+			lineage_version = "Unable to get lineage version. Check logs"
+
+		waydroid_status = "Initialized"
+	else:
+		waydroid_status = "Uninitialized"
+
+	return {
+		"waydroid_version": 	waydroid_version,
+		"waydroid_status":	waydroid_status,
+		"waydroid_installed":	waydroid_installed,
+		"waydroid_initialized":	waydroid_initialized,
+		"lineage_version":	lineage_version,
+		"lineage_variant":	lineage_variant,
+		"vendor_variant":	vendor_variant,
+		"system_ota_config":	system_ota_config,
+		"vendor_ota_config":	vendor_ota_config
+	}
 
 def generateReport(appVersion):
     # format = "txt" | "json" | "yaml"
