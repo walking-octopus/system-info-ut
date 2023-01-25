@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-25 19:27+0000\n"
+"POT-Creation-Date: 2023-01-25 21:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -283,7 +283,7 @@ msgid "Types"
 msgstr ""
 
 #: ../qml/Pages/Categories/Network.qml:133
-#: ../qml/Pages/Categories/WayDroid.qml:68
+#: ../qml/Pages/Categories/System.qml:158
 msgid "Status"
 msgstr ""
 
@@ -388,42 +388,87 @@ msgid "Language"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:153
-msgid "Halium"
+msgid "WayDroid"
 msgstr ""
 
 #: ../qml/Pages/Categories/System.qml:154
+msgid "An Android app compatiblity subsystem"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:164
+msgid "Ready"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:164
+msgid "Unconfigured"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:166
+msgid "Not installed"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:172
+#: ../qml/Pages/Categories/System.qml:186
+msgid "Version"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:182
+msgid "WayDroid Container"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:191
+msgid "Image Variant"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:196
+msgid "Vendor Variant"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:201
+msgid "System OTA link"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:206
+msgid "Vendor OTA link"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:212
+msgid "Halium"
+msgstr ""
+
+#: ../qml/Pages/Categories/System.qml:213
 msgid "Halium allows us run Linux on the devices with pre-installed Android."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:159
+#: ../qml/Pages/Categories/System.qml:218
 msgid "Android subsystem version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:163
+#: ../qml/Pages/Categories/System.qml:222
 msgid "Android API level"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:167
+#: ../qml/Pages/Categories/System.qml:226
 msgid "Security patch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:171
+#: ../qml/Pages/Categories/System.qml:230
 msgid "Build fingerprint"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:175
+#: ../qml/Pages/Categories/System.qml:234
 msgid "Build date"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:179
+#: ../qml/Pages/Categories/System.qml:238
 msgid "Build ID"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:183
+#: ../qml/Pages/Categories/System.qml:242
 msgid "Build tags"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:187
+#: ../qml/Pages/Categories/System.qml:246
 msgid "Build type"
 msgstr ""
 
@@ -473,39 +518,6 @@ msgstr ""
 
 #: ../qml/Pages/Categories/TaskManager.qml:146
 msgid "Killed process %1"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:32 ../qml/Pages/MainPage.qml:133
-msgid "WayDroid"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:59
-msgid "WayDroid Version"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:63
-#: ../qml/Pages/Categories/WayDroid.qml:88
-msgid "Version"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:84
-msgid "LineageOS Version"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:93
-msgid "Image Variant"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:98
-msgid "Vendor Variant"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:103
-msgid "System OTA link"
-msgstr ""
-
-#: ../qml/Pages/Categories/WayDroid.qml:108
-msgid "Vendor OTA link"
 msgstr ""
 
 #: ../qml/Pages/MainPage.qml:30

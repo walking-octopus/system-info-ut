@@ -148,6 +148,62 @@ Page {
                     title: i18n.tr("Language")
                     value: systemInfo["lang"]
                 }
+
+                SectionDivider {
+                    text: i18n.tr("WayDroid")
+                    subtext: i18n.tr("An Android app compatiblity subsystem")
+                }
+
+                InfoItem {
+                    title: i18n.tr("Status")
+                    value: {
+                        if (systemInfo["waydroid"]["basics"]["installed"]) {
+                            return systemInfo["waydroid"]["basics"]["configured"] ? i18n.tr("Ready") : i18n.tr("Unconfigured")
+                        } else {
+                            return i18n.tr("Not installed")
+                        }
+                    }
+                }
+
+                InfoItem {
+                    title: i18n.tr("Version")
+                    visible: systemInfo["waydroid"]["basics"]["installed"]
+                    value: systemInfo["waydroid"]["basics"]["version"]
+                }
+
+                Column {
+                    width: parent.width
+                    visible: systemInfo["waydroid"]["basics"]["installed"]
+
+                    SectionDivider {
+                        text: i18n.tr("WayDroid Container")
+                    }
+
+                    InfoItem {
+                        title: i18n.tr("Version")
+                        value: systemInfo["waydroid"]["container"]["version"]
+                    }
+
+                    InfoItem {
+                        title: i18n.tr("Image Variant")
+                        value: systemInfo["waydroid"]["container"]["variant"]
+                    }
+
+                    InfoItem {
+                        title: i18n.tr("Vendor Variant")
+                        value: systemInfo["waydroid"]["container"]["vendor_variant"]
+                    }
+
+                    InfoItem {
+                        title: i18n.tr("System OTA link")
+                        value: systemInfo["waydroid"]["container"]["system_ota_config"]
+                    }
+
+                    InfoItem {
+                        title: i18n.tr("Vendor OTA link")
+                        value: systemInfo["waydroid"]["container"]["vendor_ota_config"]
+                    }
+                }
                 
                 SectionDivider {
                     text: i18n.tr("Halium")
