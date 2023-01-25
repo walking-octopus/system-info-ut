@@ -25,7 +25,7 @@ Page {
     anchors.fill: parent
 
     property var systemInfo
-    
+
     title: header.title
     header: PageHeader {
         id: header
@@ -37,10 +37,10 @@ Page {
         height: parent.height
         width: parent.width
 
-	anchors {
+        anchors {
             top: header.bottom
-	    left: parent.left
-	    right: parent.right
+            left: parent.left
+            right: parent.right
         }
 
         Item {
@@ -62,53 +62,52 @@ Page {
                 InfoItem {
                     title: i18n.tr("Version")
                     value: systemInfo["waydroid_version"]
-
                 }
-		InfoItem {
-		    title: i18n.tr("Status")
-		    visible: (systemInfo["waydroid_installed"]) ? true : false
-		    value: systemInfo["waydroid_status"]
-		}
+                InfoItem {
+                    title: i18n.tr("Status")
+                    visible: systemInfo["waydroid_installed"] ? true : false
+                    value: systemInfo["waydroid_status"]
+                }
             }
 
             Column {
                 id: lineage_layout
                 width: parent.width
-		visible: (systemInfo["waydroid_initialized"]) ? true : false
+		        visible: systemInfo["waydroid_initialized"] ? true : false
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     top: layout.bottom
                 }
 
-		SectionDivider {
-		    text: i18n.tr("LineageOS Version")
-		}
+                SectionDivider {
+                    text: i18n.tr("LineageOS Version")
+                }
 
-		InfoItem {
-		    title: i18n.tr("Version")
-		    value: systemInfo["lineage_version"]
-		}
+                InfoItem {
+                    title: i18n.tr("Version")
+                    value: systemInfo["lineage_version"]
+                }
 
-		InfoItem {
-		    title: i18n.tr("Image Variant")
-		    value: systemInfo["lineage_variant"]
-		}
+                InfoItem {
+                    title: i18n.tr("Image Variant")
+                    value: systemInfo["lineage_variant"]
+                }
 
-		InfoItem {
-                    title: i18n.tr("Vendor Variant")
-                    value: systemInfo["vendor_variant"]
-		}
+                InfoItem {
+                        title: i18n.tr("Vendor Variant")
+                        value: systemInfo["vendor_variant"]
+                }
 
-		InfoItem {
-		    title: i18n.tr("System OTA link")
-		    value: systemInfo["system_ota_config"]
-		}
+                InfoItem {
+                    title: i18n.tr("System OTA link")
+                    value: systemInfo["system_ota_config"]
+                }
 
-		InfoItem {
+                InfoItem {
                     title: i18n.tr("Vendor OTA link")
                     value: systemInfo["vendor_ota_config"]
-		}
+                }
             }
-	}
+	    }
     }
 }
