@@ -405,11 +405,13 @@ def getBattery():
 	return infoDict
 
 def getWaydroidInfo():
-	waydroid_version = cmd("waydroid -V")
-	waydroid_installed = not "N/A" in waydroid_version
+	waydroid_bin = os.path.isfile("/usr/bin/waydroid")
+	waydroid_version = cmd("waydroid -V") if waydroid_bin else "WayDroid not installed!"
+	waydroid_installed = True if waydroid_bin else False
 
 	waydroid_config_path = "/var/lib/waydroid/waydroid.cfg"
-	waydroid_configured = os.path.isfile(waydroid_config_path)
+	waydroid_rootfs_path = "/var/lib/waydroid/rootfs" # Gives us assurity that images are fully installed and that we won't have to deal with pain
+	waydroid_configured = os.path.isfile(waydroid_config_path) and os.path.isdir(waydroid_rootfs_path)
 
 	if waydroid_installed and waydroid_configured:
 		# Import WayDroid into the path
@@ -478,3 +480,4 @@ def generateReport(appVersion):
 	}
 	
 	return yaml.dump(data, default_flow_style=False)
+		

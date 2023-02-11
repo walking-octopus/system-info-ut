@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-25 19:27+0000\n"
+"POT-Creation-Date: 2023-01-27 13:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -283,7 +283,7 @@ msgid "Types"
 msgstr ""
 
 #: ../qml/Pages/Categories/Network.qml:133
-#: ../qml/Pages/Categories/WayDroid.qml:68
+#: ../qml/Pages/Categories/WayDroid.qml:67
 msgid "Status"
 msgstr ""
 
@@ -484,27 +484,27 @@ msgid "WayDroid Version"
 msgstr ""
 
 #: ../qml/Pages/Categories/WayDroid.qml:63
-#: ../qml/Pages/Categories/WayDroid.qml:88
+#: ../qml/Pages/Categories/WayDroid.qml:87
 msgid "Version"
 msgstr ""
 
-#: ../qml/Pages/Categories/WayDroid.qml:84
+#: ../qml/Pages/Categories/WayDroid.qml:83
 msgid "LineageOS Version"
 msgstr ""
 
-#: ../qml/Pages/Categories/WayDroid.qml:93
+#: ../qml/Pages/Categories/WayDroid.qml:92
 msgid "Image Variant"
 msgstr ""
 
-#: ../qml/Pages/Categories/WayDroid.qml:98
+#: ../qml/Pages/Categories/WayDroid.qml:97
 msgid "Vendor Variant"
 msgstr ""
 
-#: ../qml/Pages/Categories/WayDroid.qml:103
+#: ../qml/Pages/Categories/WayDroid.qml:102
 msgid "System OTA link"
 msgstr ""
 
-#: ../qml/Pages/Categories/WayDroid.qml:108
+#: ../qml/Pages/Categories/WayDroid.qml:107
 msgid "Vendor OTA link"
 msgstr ""
 
