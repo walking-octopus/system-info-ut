@@ -70,7 +70,7 @@ Page {
                     value: systemInfo["system-image"]["update_channel"] && systemInfo["system-image"]["update_channel"].includes("stable") ?
                         systemInfo["system-image"]["ota_version"] :
                         systemInfo["system-image"]["version_version"]
-                }
+               }
                 InfoItem {
                     title: i18n.tr("Update channel")
                     value: systemInfo["system-image"]["update_channel"]
@@ -105,24 +105,7 @@ Page {
                 }
                 InfoItem {
                     title: i18n.tr("Uptime")
-                    value: {
-                        function getElapsedTime(start, end) {
-                            let days = Math.floor((end - start) / (1000 * 60 * 60 * 24));
-                            let hours = Math.floor((end - start) / (1000 * 60 * 60)) % 24;
-                            let minutes = Math.floor((end - start) / (1000 * 60)) % 60;
-                            // let seconds = Math.floor((end - start) / 1000) % 60;
-
-                            let time = [days, hours, minutes]
-                                .filter(i => !!i)
-                                .map((v, i) => v > 0 ? v + ['d', 'h', 'm', 's'][i] : '')
-                                .join(' ');
-
-                            return time
-                        }
-
-                        let boot_time = new Date(systemInfo["boot_time"] * 1000);
-                        return getElapsedTime(boot_time, new Date());
-                    }
+                    value: systemInfo["uptime"]
                 }
                 InfoItem {
                     title: i18n.tr("AppArmor status")

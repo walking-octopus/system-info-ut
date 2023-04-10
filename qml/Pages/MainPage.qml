@@ -14,7 +14,7 @@
 * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.7
+import QtQuick 2.12
 import Ubuntu.Components 1.3
 import "../Components"
 
@@ -128,6 +128,16 @@ Page {
                     onClicked:
                         python.loadCategory("../Pages/Categories/Battery.qml", "system_info.getBattery")
                 }
+
+		CategoryButton {
+		    title: i18n.tr("WayDroid")
+
+		    icon.source: "../../assets/waydroid.svg"
+		    colorIndex: 11
+
+		    onClicked:
+			python.loadCategory("../Pages/Categories/WayDroid.qml", "system_info.getWaydroidInfo")
+		}
 
                 // TODO: How about a Sensors category?
             }

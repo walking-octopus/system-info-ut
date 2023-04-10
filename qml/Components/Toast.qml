@@ -1,5 +1,5 @@
 
-import QtQuick 2.9
+import QtQuick 2.12
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-info.walking-octopus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-30 05:47+0000\n"
+"POT-Creation-Date: 2023-01-27 13:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -283,6 +283,7 @@ msgid "Types"
 msgstr ""
 
 #: ../qml/Pages/Categories/Network.qml:133
+#: ../qml/Pages/Categories/WayDroid.qml:67
 msgid "Status"
 msgstr ""
 
@@ -346,83 +347,83 @@ msgstr ""
 msgid "Uptime"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:128
+#: ../qml/Pages/Categories/System.qml:111
 msgid "AppArmor status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:129
-#: ../qml/Pages/Categories/System.qml:158
-#: ../qml/Pages/Categories/System.qml:162
+#: ../qml/Pages/Categories/System.qml:112
+#: ../qml/Pages/Categories/System.qml:141
+#: ../qml/Pages/Categories/System.qml:145
 msgid "Disabled"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:129
-#: ../qml/Pages/Categories/System.qml:158
-#: ../qml/Pages/Categories/System.qml:162
+#: ../qml/Pages/Categories/System.qml:112
+#: ../qml/Pages/Categories/System.qml:141
+#: ../qml/Pages/Categories/System.qml:145
 msgid "Enabled"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:138
+#: ../qml/Pages/Categories/System.qml:121
 msgid "View loaded modules"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:139
+#: ../qml/Pages/Categories/System.qml:122
 msgid "This may help troubleshoot device issues."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:153
+#: ../qml/Pages/Categories/System.qml:136
 msgid "Preferences"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:157
+#: ../qml/Pages/Categories/System.qml:140
 msgid "SSH (Remote control) status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:161
+#: ../qml/Pages/Categories/System.qml:144
 msgid "ADB (Developer mode) status"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:165
+#: ../qml/Pages/Categories/System.qml:148
 msgid "Language"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:170
+#: ../qml/Pages/Categories/System.qml:153
 msgid "Halium"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:171
+#: ../qml/Pages/Categories/System.qml:154
 msgid "Halium allows us run Linux on the devices with pre-installed Android."
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:176
+#: ../qml/Pages/Categories/System.qml:159
 msgid "Android subsystem version"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:180
+#: ../qml/Pages/Categories/System.qml:163
 msgid "Android API level"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:184
+#: ../qml/Pages/Categories/System.qml:167
 msgid "Security patch"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:188
+#: ../qml/Pages/Categories/System.qml:171
 msgid "Build fingerprint"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:192
+#: ../qml/Pages/Categories/System.qml:175
 msgid "Build date"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:196
+#: ../qml/Pages/Categories/System.qml:179
 msgid "Build ID"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:200
+#: ../qml/Pages/Categories/System.qml:183
 msgid "Build tags"
 msgstr ""
 
-#: ../qml/Pages/Categories/System.qml:204
+#: ../qml/Pages/Categories/System.qml:187
 msgid "Build type"
 msgstr ""
 
@@ -472,6 +473,39 @@ msgstr ""
 
 #: ../qml/Pages/Categories/TaskManager.qml:146
 msgid "Killed process %1"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:32 ../qml/Pages/MainPage.qml:133
+msgid "WayDroid"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:59
+msgid "WayDroid Version"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:63
+#: ../qml/Pages/Categories/WayDroid.qml:87
+msgid "Version"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:83
+msgid "LineageOS Version"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:92
+msgid "Image Variant"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:97
+msgid "Vendor Variant"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:102
+msgid "System OTA link"
+msgstr ""
+
+#: ../qml/Pages/Categories/WayDroid.qml:107
+msgid "Vendor OTA link"
 msgstr ""
 
 #: ../qml/Pages/MainPage.qml:30
