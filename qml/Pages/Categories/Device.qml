@@ -15,7 +15,7 @@
 */
 
 import QtQuick 2.12
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtQuick.Window 2.0
 import QtMultimedia 5.4
 import "../../Components"

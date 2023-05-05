@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.12
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 import QtQuick.Layouts 1.3
 
 AbstractButton {
@@ -31,7 +31,7 @@ AbstractButton {
     // Nested ternary operators look weird...
 
     // RGB channels from 'shape.color' are in [0; 1] range.
-    property color foregroundColor: ((shape.color.r * 0.30 + shape.color.g * 0.6 + shape.color.b * 0.12) > 0.6) ? UbuntuColors.darkGrey : "#F3F3E7"
+    property color foregroundColor: ((shape.color.r * 0.30 + shape.color.g * 0.6 + shape.color.b * 0.12) > 0.6) ? LomiriColors.darkGrey : "#F3F3E7"
 
     // TODO: Use a dictionary for more recognizable color names
     readonly property color color: ["#f0f0f0", "#ed3146", "#d4326b", "#e95420", "#f89b0f", "#f5d412", "#46c54f", "#14cfa8", "#19b6ee", "#4e46c5", "#9542c4", "#c343bf"][colorIndex]
@@ -42,9 +42,9 @@ AbstractButton {
 
     property alias icon: icon
 
-    UbuntuShape {
+    LomiriShape {
         id: shape
-        aspect: rootItem.pressed ? UbuntuShape.Inset : UbuntuShape.DropShadow
+        aspect: rootItem.pressed ? LomiriShape.Inset : LomiriShape.DropShadow
         color: rootItem.color
         radius: "medium"
 

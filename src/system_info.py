@@ -17,6 +17,7 @@
 import platform, psutil, subprocess
 import re, os, requests, sys
 import yaml
+import csv, pathlib
 import pyotherside
 
 # Parsers
@@ -169,7 +170,11 @@ def getSystem():
 	kernel = uname.release
 	hostname = uname.node
 	arch = uname.processor
-	disro = " ".join(platform.linux_distribution())
+	
+	# Read /etc/os-release
+	with open(pathlib.Path("/etc/os-release")) as stream:
+		reader = csv.reader(stream, delimiter="=")
+		distro = dict(reader)["PRETTY_NAME"]
 
 	boot_time = psutil.boot_time()
 
@@ -203,7 +208,7 @@ def getSystem():
 			"kernel": kernel,
 			"hostname": hostname,
 			"arch": arch,
-			"distro": disro,
+			"distro": distro,
 		},
 		"system-image": {
 			"ota_version": ota_version,
@@ -437,8 +442,9 @@ def getWaydroidInfo():
 				ota_version = waydroid.tools.helpers.props.get(args, "ro.lineage.display.version")
 		else:
 			try:
-				for i in requests.get(system_ota_config).json():
-					if i["datetime"] == system_ota_datetime:
+				ota_version = None
+				for i in requests.get(system_ota_config).json()["response"]:
+					if i["datetime"] == int(system_ota_datetime):
 						ota_version = i["filename"]
 			except requests.exceptions.RequestException:
 				ota_version = None
