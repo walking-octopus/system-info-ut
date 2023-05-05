@@ -1,9 +1,9 @@
 
 import QtQuick 2.12
 import QtQuick.Layouts 1.1
-import Ubuntu.Components 1.3
+import Lomiri.Components 1.3
 
-UbuntuShape {
+LomiriShape {
     property var defaultTime: 3500
     property bool stateVisible: false
 
@@ -18,7 +18,7 @@ UbuntuShape {
 
     backgroundColor: (Theme.name != "Ubuntu.Components.Themes.Ambiance") ? "white" : "#202020"
 
-    aspect: UbuntuShape.DropShadow
+    aspect: LomiriShape.DropShadow
     radius: "large"
     visible: false
     z: 30
